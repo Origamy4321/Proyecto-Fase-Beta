@@ -151,7 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Gimnasio.cpp" />
     <ClCompile Include="Proyecto-Fase-Beta.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Gimnasio.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
