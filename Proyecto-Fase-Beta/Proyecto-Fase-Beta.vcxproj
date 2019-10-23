@@ -163,6 +163,7 @@
     <ClCompile Include="nodoRutina.cpp" />
     <ClCompile Include="nodoSalon.cpp" />
     <ClCompile Include="nodoSocio.cpp" />
+    <ClCompile Include="Persona.cpp" />
     <ClCompile Include="Proyecto-Fase-Beta.cpp" />
     <ClCompile Include="Rutina.cpp" />
     <ClCompile Include="Salon.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="nodoRutina.h" />
     <ClInclude Include="nodoSalon.h" />
     <ClInclude Include="nodoSocio.h" />
+    <ClInclude Include="Persona.h" />
     <ClInclude Include="Rutina.h" />
     <ClInclude Include="Salon.h" />
     <ClInclude Include="Socio.h" />
