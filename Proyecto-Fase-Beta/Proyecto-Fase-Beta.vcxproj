@@ -154,8 +154,8 @@
     <ClCompile Include="Clase.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="Gimnasio.cpp" />
+    <ClCompile Include="Inscripciones.cpp" />
     <ClCompile Include="Instructor.cpp" />
-    <ClCompile Include="Interfaz.cpp" />
     <ClCompile Include="ListaInstructor.cpp" />
     <ClCompile Include="ListaRutina.cpp" />
     <ClCompile Include="ListaSocio.cpp" />
@@ -173,8 +173,8 @@
     <ClInclude Include="Clase.h" />
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="Gimnasio.h" />
+    <ClInclude Include="Inscripciones.h" />
     <ClInclude Include="Instructor.h" />
-    <ClInclude Include="Interfaz.h" />
     <ClInclude Include="ListaInstructor.h" />
     <ClInclude Include="ListaRutina.h" />
     <ClInclude Include="ListaSocio.h" />
