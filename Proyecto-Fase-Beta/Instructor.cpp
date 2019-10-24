@@ -4,7 +4,7 @@ Instructor::Instructor(string correo, string telefono):Persona(nombre), Persona(
 	this->correo = correo;
 	this->telefono = telefono;
 }
-
+/
 Instructor::~Instructor(){}
 
 void Instructor::setCorreo(string correo) {
