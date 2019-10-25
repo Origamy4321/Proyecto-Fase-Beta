@@ -2,6 +2,7 @@
 #include"Salon.h"
 class nodoSalon
 {
+private:
 	Salon salon;
 	nodoSalon* siguiente;
 
@@ -19,7 +20,7 @@ public:
 
 	nodoSalon* getSiguiente();
 
-	void setSiguiente(nodoSalon*);
+	void setSiguiente(nodoSalon* elSiguiente);
 
 	string toString();
 

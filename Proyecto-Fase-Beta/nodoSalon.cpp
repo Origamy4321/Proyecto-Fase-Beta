@@ -19,14 +19,12 @@ nodoSalon *nodoSalon::getSiguiente() {
 	return siguiente;
 }
 
-void setSiguiente(nodoSalon* elSiguiente) {
-
-
-
-
+void nodoSalon::setSiguiente(nodoSalon *siguiente) {
+    nodoSalon::siguiente = siguiente;
 }
 
-string toString();
-
+string nodoSalon::toString() {
+	return salon.toString();
+}
 
 
