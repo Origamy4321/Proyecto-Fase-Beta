@@ -7,6 +7,10 @@ class Clase {
 
 private:
 
+	string nombreDeLaClase;
+
+
+
 public:
 
 	Clase();

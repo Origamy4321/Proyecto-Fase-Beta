@@ -158,6 +158,7 @@
     <ClCompile Include="Instructor.cpp" />
     <ClCompile Include="ListaInstructor.cpp" />
     <ClCompile Include="ListaRutina.cpp" />
+    <ClCompile Include="listaSalon.cpp" />
     <ClCompile Include="ListaSocio.cpp" />
     <ClCompile Include="nodoInstructor.cpp" />
     <ClCompile Include="nodoRutina.cpp" />
@@ -177,7 +178,9 @@
     <ClInclude Include="Instructor.h" />
     <ClInclude Include="ListaInstructor.h" />
     <ClInclude Include="ListaRutina.h" />
+    <ClInclude Include="listaSalon.h" />
     <ClInclude Include="ListaSocio.h" />
+    <ClInclude Include="NodoInstructor.h" />
     <ClInclude Include="nodoRutina.h" />
     <ClInclude Include="nodoSalon.h" />
     <ClInclude Include="nodoSocio.h" />
