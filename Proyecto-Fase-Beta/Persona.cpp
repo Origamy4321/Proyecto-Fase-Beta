@@ -16,11 +16,9 @@ void Persona::setNombre(const std::string & nombre) {
 int Persona::getAno() const {
 	return ano;
 }
-
 void Persona::setAno(int ano) {
 	Persona::ano = ano;
 }
-
 std::ostream& operator<<(std::ostream & os, const Persona & persona) {
 	os << "nombre: " << persona.nombre << " ano: " << persona.ano;
 	return os;

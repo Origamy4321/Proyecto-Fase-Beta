@@ -13,13 +13,13 @@ class Persona
 
 		Persona(const std::string& nombre, int ano);
 
-		const std::string& getNombre() const;
+		virtual const std::string& getNombre() const;
 
-		void setNombre(const std::string& nombre);
+		virtual void setNombre(const std::string& nombre);
 
-		int getAno() const;
+		virtual int getAno() const;
 
-		void setAno(int ano);
+		virtual void setAno(int ano);
 
 		friend std::ostream& operator<<(std::ostream& os, const Persona& persona);
 	

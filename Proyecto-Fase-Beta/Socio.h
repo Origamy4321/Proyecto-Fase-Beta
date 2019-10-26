@@ -7,23 +7,27 @@ private:
 	string telefono;
 	string fechaInscripcion;
 public:
-	Socio(string, string, string, string, int);
+	Socio(string, int, string, string, string);
 
 	~Socio();
 
 	void setCorreo(string);
 	void setTelefono(string);
 	void setFechaInscripcion(string);
-	void setNombre(string);
-	void setAno(int);
+	
 
 	string getCorreo();
 	string getTelefono();
 	string getFechaInscripcion();
-	string getNombre();
-	int getAno();
+	
 
 	string toString();
+
+	string getNombre();
+	void setNombre(string nombre);
+	int getAno() const;
+	void setAno(int ano);
+
 
 
 

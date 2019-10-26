@@ -34,7 +34,7 @@ void ListaRutina::ListaRutina::agregarRutina(Rutina* p) {
 }
 
 Rutina* ListaRutina::buscarRutina(string cod) {
-	nodoRutina* actual = primero;
+	NodoRutina* actual = primero;
 	Rutina* pRutina = NULL;
 	while (actual != NULL) {
 		pRutina = actual->obtenerDato();

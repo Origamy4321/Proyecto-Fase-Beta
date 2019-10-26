@@ -1,5 +1,5 @@
 #include"Socio.h"
-Socio::Socio(string correo, string telefono, string fechaInscripcion, string nombre, int ano) : Persona(nombre), Persona(ano) {
+Socio::Socio(string nombre, int anno, string correo, string telefono, string fechaInscripcion) : Persona::Persona(nombre,anno){
 	this->correo = correo;
 	this->telefono = telefono;
 	this->fechaInscripcion = fechaInscripcion;
@@ -19,13 +19,6 @@ void Socio::setFechaInscripcion(string fechaInscripcion) {
 	Socio::fechaInscripcion = fechaInscripcion;
 }
 
-void Socio::setNombre(string nombre) {
-	Socio::nombre = nombre;
-}
-
-void Socio::setAno(int ano) {
-	Socio::ano = ano;
-}
 
 string Socio::getCorreo() {
 	return correo;
@@ -39,12 +32,25 @@ string Socio::getFechaInscripcion() {
 	return fechaInscripcion;
 }
 
-string Socio::getNombre() {
-	return nombre;
+void Socio::setAno(int ano) {
+	Persona::setAno(ano);
 }
 
-int Socio::getAno() {
-	return ano;
+string Socio::toString(){
 }
 
-string Socio::toString(){}
+string Socio::getNombre(){
+	return Persona::getNombre();
+}
+
+void Socio::setNombre(string nombre) {
+	Persona::setNombre(nombre);
+}
+
+int Socio::getAno() const {
+	return Persona::getAno();
+}
+
+void Socio::setAno(int ano) {
+	Persona::setAno(ano);
+}
