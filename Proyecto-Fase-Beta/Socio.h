@@ -1,45 +1,33 @@
-#include<iostream>
-#include<string>
+#include "Instructor.h"
 #include"Persona.h"
-class Socio: public Persona{
+#pragma once
+class Socio: public Persona {
+
 private:
-	string correo;
-	string telefono;
+
 	string fechaInscripcion;
+	Instructor* instructor;
+
+
 public:
-	Socio(string, int, string, string, string);
+
+
+	Socio(const string& nombre, const string& correo, const string& telefono, const string& numCedula,
+		const string& fechaInscripcion, Instructor* instructor);
+
+	Socio();
 
 	~Socio();
 
-	void setCorreo(string);
-	void setTelefono(string);
-	void setFechaInscripcion(string);
-	
+	const string& getFechaInscripcion() const;
 
-	string getCorreo();
-	string getTelefono();
-	string getFechaInscripcion();
-	
+	void setFechaInscripcion(const string& fechaInscripcion);
+
+	Instructor* getInstructor() const;
+
+	void setInstructor(Instructor* instructor);
 
 	string toString();
-
-	string getNombre();
-	void setNombre(string nombre);
-	int getAno() const;
-	void setAno(int ano);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

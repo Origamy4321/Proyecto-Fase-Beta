@@ -1,24 +1,9 @@
 #include"Instructor.h"
 
-Instructor::Instructor(string correo, string telefono):Persona(nombre), Persona(ano) {
-	this->correo = correo;
-	this->telefono = telefono;
-}
-/
-Instructor::~Instructor(){}
+Instructor::Instructor(const string& nombre, const string& correo, const string& telefono, const string& numCedula)
+	: Persona(nombre, correo, telefono, numCedula) {}
 
-void Instructor::setCorreo(string correo) {
-	Instructor::correo = correo;
+string Instructor::toString() {
+	return Persona::toString();
 }
 
-void Instructor::setTelefono(string telefono) {
-	Instructor::telefono = telefono;
-}
-
-void Instructor::setNombre() {
-	Instructor::nombre = nombre;
-}
-
-void Instructor::setAno(int ano) {
-	Instructor::ano = ano;
-}

@@ -1,56 +1,33 @@
 #include"Socio.h"
-Socio::Socio(string nombre, int anno, string correo, string telefono, string fechaInscripcion) : Persona::Persona(nombre,anno){
-	this->correo = correo;
-	this->telefono = telefono;
-	this->fechaInscripcion = fechaInscripcion;
-}
-
-Socio::~Socio() {}
-
-void Socio::setCorreo(string correo) {
-	Socio::correo = correo;
-}
-
-void Socio::setTelefono(string telefono) {
-	Socio::telefono = telefono;
-}
-
-void Socio::setFechaInscripcion(string fechaInscripcion) {
-	Socio::fechaInscripcion = fechaInscripcion;
-}
 
 
-string Socio::getCorreo() {
-	return correo;
-}
+Socio::Socio(const string& nombre, const string& correo, const string& telefono, const string& numCedula,
+	const string& fechaInscripcion, Instructor* instructor) : Persona(nombre, correo, telefono, numCedula),
+	fechaInscripcion(fechaInscripcion),
+	instructor(instructor) {}
 
-string Socio::getTelefono() {
-	return telefono;
-}
-
-string Socio::getFechaInscripcion() {
+const string& Socio::getFechaInscripcion() const {
 	return fechaInscripcion;
 }
 
-void Socio::setAno(int ano) {
-	Persona::setAno(ano);
+void Socio::setFechaInscripcion(const string& fechaInscripcion) {
+	Socio::fechaInscripcion = fechaInscripcion;
 }
 
-string Socio::toString(){
+Instructor* Socio::getInstructor() const {
+	return instructor;
 }
 
-string Socio::getNombre(){
-	return Persona::getNombre();
+void Socio::setInstructor(Instructor* instructor) {
+	Socio::instructor = instructor;
+}
+string Socio::toString() {
+	string reporte;
+
+	reporte = +"Los datos del socio son los siguientes" + Persona::toString() + "Fecha de inscripcion: " +
+		fechaInscripcion + "El instructor asignado es: " + instructor->getNombre() + "\n";
+
+	return reporte;
 }
 
-void Socio::setNombre(string nombre) {
-	Persona::setNombre(nombre);
-}
 
-int Socio::getAno() const {
-	return Persona::getAno();
-}
-
-void Socio::setAno(int ano) {
-	Persona::setAno(ano);
-}

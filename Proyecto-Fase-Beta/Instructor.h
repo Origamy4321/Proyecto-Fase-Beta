@@ -1,28 +1,15 @@
-#include<iostream>
-#include<string>
 #include"Persona.h"
-using namespace std;
+#pragma once
+class Instructor : public Persona {
 
-class Instructor: class Persona {
 private:
-	string correo;
-	string telefono;
+
+
 
 public:
 
-	Instructor(string, string, string, int);
 
-	~Instructor();
-
-	void setCorreo(string);
-	void setTelefono(string);
-	void setNombre(string);
-	void setAno(int);
-
-	string getCorreo();
-	string getTelefono();
-	string getNombre();
-	int getAno();
+	Instructor(const string& nombre, const string& correo, const string& telefono, const string& numCedula);
 
 	string toString();
 

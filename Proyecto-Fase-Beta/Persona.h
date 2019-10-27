@@ -1,28 +1,42 @@
 #pragma once
+#include <iostream>
 #include <string>
-#include <ostream>
-#include<sstream>
+#include <sstream>
 using namespace std;
-class Persona
-{
-		std::string nombre;
-		int ano;
 
-	public:
-		Persona();
+class Persona {
 
-		Persona(const std::string& nombre, int ano);
+	string nombre;
+	string correo;
+	string telefono;
+	string numCedula;
 
-		virtual const std::string& getNombre() const;
+public:
 
-		virtual void setNombre(const std::string& nombre);
+	Persona(const string& nombre, const string& correo, const string& telefono, const string& numCedula);
 
-		virtual int getAno() const;
+	Persona();
 
-		virtual void setAno(int ano);
+	virtual ~Persona();
 
-		friend std::ostream& operator<<(std::ostream& os, const Persona& persona);
-	
+	const string& getNombre() const;
+
+	void setNombre(const string& nombre);
+
+	const string& getCorreo() const;
+
+	void setCorreo(const string& correo);
+
+	const string& getTelefono() const;
+
+	void setTelefono(const string& telefono);
+
+	const string& getNumCedula() const;
+
+	void setNumCedula(const string& numCedula);
+
+	virtual string toString();
+
 
 
 };
