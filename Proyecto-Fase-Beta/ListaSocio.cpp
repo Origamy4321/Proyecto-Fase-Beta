@@ -1,25 +1,28 @@
 #include"ListaSocio.h"
-#include"NodoSocio.h"
 
-ListaSocio::ListaSocio() :primero(NULL), ultimo(NULL), cantidad(0) {}
+
+ListaSocio::ListaSocio() :primero(NULL), ultimo(NULL), cantidad(0) {
+}
 ListaSocio::~ListaSocio() {}
+
+
 void ListaSocio::ListaSocio::agregarSocio(Socio* p) {
 
-	NodoSocio* actual;
-	NodoSocio* nuevoNodo;
+
+	nodoSocio* nuevoNodo;
 	if (primero == NULL) {
-		primero = new NodoSocio(p, NULL);
+		primero = new nodoSocio(p, NULL);
 		cantidad++;
 	}
 	else {
-		actual = primero;
+		ultimo = primero;
 
-		while (actual->obtenerSiguiente() != NULL) {
-			actual = actual->obtenerSiguiente();
+		while (ultimo->obtenerSiguiente() != NULL) {
+			ultimo = ultimo->obtenerSiguiente();
 		}
 
-		nuevoNodo = new NodoSocio(p, NULL);
-		actual->fijarSiguiente(nuevoNodo);
+		nuevoNodo = new nodoSocio(p, NULL);
+		ultimo->fijarSiguiente(nuevoNodo);
 		cantidad++;
 	}
 
@@ -33,43 +36,46 @@ int ListaSocio::getCant() {
 void ListaSocio::setCant(int cant) {
 	cantidad = cant;
 }
-Socio* ListaSocio::buscarSocio(string ced) {
-	NodoSocio* actual = primero;
-	Socio* soc = NULL;
-	while (actual != NULL) {
-		soc = actual->obtenerDato();
-		if (soc->getCedula() == ced) {
-			return soc;
+Socio* ListaSocio::buscarSocio(string cedula) {
+
+	ultimo = primero;
+	Socio* elSocio = NULL;
+	while (ultimo != NULL) {
+		elSocio =	ultimo->obtenerDato();
+		if (elSocio->getNumCedula == ultimo) {
+			return elSocio;
 		}
-		actual = actual->obtenerSiguiente();
+		ultimo = ultimo->obtenerSiguiente();
 	}
 	return NULL;
 }
 
 string ListaSocio::toString() {
 	stringstream s;
-	NodoSocio* actual = primero;
+	ultimo = primero;
 	Socio* soc;
 
-	while (actual != NULL) {
-		soc = actual->obtenerDato();
+	while (ultimo != NULL) {
+		soc = ultimo->obtenerDato();
 		s << soc->toString();
-		actual = actual->obtenerSiguiente();
+		ultimo = ultimo->obtenerSiguiente();
 	}
 
 	return s.str();
 }
 
-string ListaSocio::datosBasicos() const {
-	stringstream s;
-	NodoSocio* actual = primero;
-	Socio* soc;
+//string ListaSocio::datosBasicos(){
+	//stringstream s;
 
-	while (actual != NULL) {
-		soc = actual->obtenerDato();
-		s << soc->datos();
-		actual = actual->obtenerSiguiente();
-	}
+	//ultimo = primero;
 
-	return s.str();
-}
+	//Socio* soc;
+
+	//while (ultimo != NULL) {
+		//soc = ultimo->obtenerDato();
+		//s << soc.;
+		//actual = actual->obtenerSiguiente();
+	//}
+
+	//return s.str();
+//}

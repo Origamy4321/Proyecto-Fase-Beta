@@ -1,27 +1,28 @@
-#include"NodoInstructor.h"
+#include "nodoInstructor.h"
 
-NodoInstructor::NodoInstructor(Instructor* dato, NodoInstructor* siguiente)
+
+nodoInstructor::nodoInstructor(Instructor* dato, nodoInstructor* siguiente)
 	:dato(dato), siguiente(siguiente) {
 }
 
-NodoInstructor::~NodoInstructor() {
+nodoInstructor::~nodoInstructor() { //destructor pendiente
 	/*if (siguiente != NULL) {
 		delete siguiente;
 	}*/
 }
 
-Instructor* NodoInstructor::obtenerDato() {
+Instructor* nodoInstructor::obtenerDato() {
 	return dato;
 }
 
-NodoInstructor* NodoInstructor::obtenerSiguiente() {
+nodoInstructor* nodoInstructor::obtenerSiguiente() {
 	return siguiente;
 }
 
-void NodoInstructor::definirDato(Instructor* x) {
+void nodoInstructor::definirDato(Instructor* x) {
 	dato = x;
 }
 
-void NodoInstructor::fijarSiguiente(NodoInstructor* sigui) {
+void nodoInstructor::fijarSiguiente(nodoInstructor* sigui) {
 	siguiente = sigui;
 }

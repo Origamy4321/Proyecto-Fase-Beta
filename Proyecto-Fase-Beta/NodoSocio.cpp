@@ -1,28 +1,25 @@
-#include"NodoSocio.h"
+#include"nodoSocio.h"
 
-NodoSocio::NodoSocio(Socio* dato, NodoSocio* siguiente)
+nodoSocio::nodoSocio(Socio* dato, nodoSocio* siguiente)
 	: dato(dato), siguiente(siguiente) {
 }
 
-NodoSocio::~NodoSocio() {
-	/*if (siguiente != NULL) {
-		delete siguiente;
-	}*/
+nodoSocio::~nodoSocio() {
+		
 }
 
-
-Socio* NodoSocio::obtenerDato() {
+Socio* nodoSocio::obtenerDato() {
 	return dato;
 }
 
-NodoSocio* NodoSocio::obtenerSiguiente() {
+nodoSocio* nodoSocio::obtenerSiguiente() {
 	return siguiente;
 }
 
-void NodoSocio::definirDato(Socio* x) {
+void nodoSocio::definirDato(Socio* x) {
 	dato = x;
 }
 
-void NodoSocio::fijarSiguiente(NodoSocio* sig) {
+void nodoSocio::fijarSiguiente(nodoSocio* sig) {
 	siguiente = sig;
 }

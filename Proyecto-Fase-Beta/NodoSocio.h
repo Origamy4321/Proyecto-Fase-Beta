@@ -2,24 +2,29 @@
 #define NODO_SOCIO_H
 #include<iostream>
 #include"Socio.h"
-class Socio;
-class NodoSocio;
-class NodoSocio {
-private:
-	NodoSocio* siguiente;
-	Socio* dato;
-public:
-	NodoSocio(Socio*, NodoSocio*);
 
-	virtual ~NodoSocio();
+
+class nodoSocio {
+
+private:
+
+	nodoSocio* siguiente;
+
+	Socio* dato;
+
+public:
+
+	nodoSocio(Socio*, nodoSocio*);
+
+	virtual ~nodoSocio();
 
 	virtual Socio* obtenerDato();
 
-	virtual NodoSocio* obtenerSiguiente();
+	virtual nodoSocio* obtenerSiguiente();
 
 	virtual void definirDato(Socio*);
 
-	virtual void fijarSiguiente(NodoSocio*);
+	virtual void fijarSiguiente(nodoSocio*);
 
 
 

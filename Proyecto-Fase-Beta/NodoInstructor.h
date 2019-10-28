@@ -1,26 +1,32 @@
-#ifndef NODO_INSTRUCTOR_H
-#define NODO_INSTRUCTOR_H
+#pragma once
 #include<iostream>
 #include"Instructor.h"
-class NodoInstructor {
-private:
-	NodoInstructor* siguiente;
-	Instructor* dato;
-public:
-	NodoInstructor(Instructor*, NodoInstructor*);
 
-	virtual ~NodoInstructor();
+class nodoInstructor
+{
+ 
+	private:
 
-	virtual Instructor* obtenerDato();
+		nodoInstructor* siguiente;
 
-	virtual NodoInstructor* obtenerSiguiente();
+		Instructor* dato;
 
-	virtual void definirDato(Instructor*);
+	public:
 
-	virtual void fijarSiguiente(NodoInstructor*);
+		nodoInstructor(Instructor*, nodoInstructor*);
+
+		virtual ~nodoInstructor();
+
+		virtual Instructor* obtenerDato();
+
+		virtual nodoInstructor* obtenerSiguiente();
+
+		virtual void definirDato(Instructor*);
+
+		virtual void fijarSiguiente(nodoInstructor*);
 
 
 
+	
 };
-#endif //NODO_INSTRUCTOR_H
 

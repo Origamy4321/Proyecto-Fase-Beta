@@ -180,7 +180,7 @@
     <ClInclude Include="ListaRutina.h" />
     <ClInclude Include="listaSalon.h" />
     <ClInclude Include="ListaSocio.h" />
-    <ClInclude Include="NodoInstructor.h" />
+    <ClInclude Include="nodoInstructor.h" />
     <ClInclude Include="nodoRutina.h" />
     <ClInclude Include="nodoSalon.h" />
     <ClInclude Include="nodoSocio.h" />

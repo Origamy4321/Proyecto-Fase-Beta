@@ -14,43 +14,43 @@ int ListaInstructor::getCantidad() {
 
 void ListaInstructor::ListaInstructor::agregarInstructor(Instructor* p) {
 
-	NodoInstructor* actual;
-	NodoInstructor* nuevoNodo;
+      nodoInstructor* nuevoNodo;
+
 	if (primero == NULL) {
-		primero = new NodoInstructor(p, NULL);
+		primero = new nodoInstructor(p, NULL);
 	}
 	else {
-		actual = primero;
+		ultimo = primero;
 
-		while (actual->obtenerSiguiente() != NULL) {
-			actual = actual->obtenerSiguiente();
+		while (ultimo->obtenerSiguiente() != NULL) {
+			ultimo = ultimo->obtenerSiguiente();
 		}
 
-		nuevoNodo = new NodoInstructor(p, NULL);
-		actual->fijarSiguiente(nuevoNodo);
+		nuevoNodo = new nodoInstructor(p, NULL);
+		ultimo->fijarSiguiente(nuevoNodo);
 	}
 
 }
 
-Instructor* ListaInstructor::buscarInstructor(string id) {
-	NodoInstructor* actual = primero;
+Instructor* ListaInstructor::buscarInstructor(string id) { //pendiente
+	ultimo = primero;
 	Instructor* instruc = NULL;
-	while (actual != NULL) {
-		instruc = actual->obtenerDato();
+	while (ultimo != NULL) {
+		instruc = ultimo->obtenerDato();
 		if (instruc->obtenerDato() == id) {
 			return instruc;
 		}
-		actual = actual->obtenerSiguiente();
+		ultimo = ultimo->obtenerSiguiente();
 	}
 	return NULL;
 }
 
-string ListaInstructor::toString() {
+string ListaInstructor::toString() { //pendiente
 	stringstream r;
-	NodoInstructor* actual = primero;
+	ultimo = primero;
 	Instructor* instruct;
 
-	while (actual != NULL) {
+	while (ultimo != NULL) {
 		instruct = actual->obtenerDato();
 		r << instruct->toString();
 		actual = actual->obtenerSiguiente();

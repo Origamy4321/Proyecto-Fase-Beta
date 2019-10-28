@@ -1,25 +1,31 @@
 #ifndef LISTA_SOCIO_H
 #define LISTA_SOCIO_H
 #include<iostream>
-#include"NodoSocio.h"
-class ListaSocio;
-class Clase;
-class Rutina;
-class Socio;
-class NodoSocio;
+#include"nodoSocio.h"
+
 class ListaSocio {
+
 private:
-	NodoSocio* primero;
-	NodoSocio* ultimo;
+
+	nodoSocio* primero;
+	nodoSocio* ultimo; //ULTIMO ES IGUAL A ACTUAL.
 	int cantidad;
+
 public:
 	ListaSocio();
+
 	virtual ~ListaSocio();
+
 	virtual string toString();
-	virtual string datosBasicos()const;
+
+	virtual string datosBasicos();
+
 	virtual int getCant();
+
 	virtual void setCant(int);
+
 	virtual Socio* buscarSocio(string);
+
 	virtual void agregarSocio(Socio*);
 
 };
