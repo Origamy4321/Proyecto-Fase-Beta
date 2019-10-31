@@ -1,6 +1,6 @@
 
 #include<iostream>
-#include"NodoInstructor.h"
+#include"nodoInstructor.h"
 
 class ListaInstructor {
 

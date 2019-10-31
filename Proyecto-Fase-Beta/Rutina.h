@@ -35,9 +35,9 @@ public:
 	virtual void setDescripcion(string);
 	virtual void setCodigo(string);
 	virtual void setSalon(Salon*);
-	virtual void setInstructor(ListaSocio*);
+	
 	virtual void setSocio(ListaSocio*);
-	virtual ListaSocio getSocio();
+	
 	virtual string getDescripcion();
 	virtual string getCodigo();
 	virtual Salon* getSalon();

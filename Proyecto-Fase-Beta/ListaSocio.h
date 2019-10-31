@@ -1,5 +1,4 @@
-#ifndef LISTA_SOCIO_H
-#define LISTA_SOCIO_H
+
 #include<iostream>
 #include"nodoSocio.h"
 
@@ -29,4 +28,4 @@ public:
 	virtual void agregarSocio(Socio*);
 
 };
-#endif //LISTA_SOCIO_H
+

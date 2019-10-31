@@ -34,9 +34,7 @@ void Rutina::setCodigo(string cod) {
 	codigo = x;
 }
 
-//void Rutina::setInstructor(Instructor* ins){
-	//instr = ins;
-//}
+
 
 
 void Rutina::setSalon(Salon* sa) {
@@ -53,9 +51,7 @@ Instructor* Rutina::getInstructor() {
 Salon* Rutina::getSalon() {
 	return sal;
 }
-//ListaSocio* Rutina::getSocio() {
-	//return 0;
-//}
+
 
 
 void  Rutina::setSocio(ListaSocio* x) {

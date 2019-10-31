@@ -28,8 +28,7 @@ void ListaSocio::ListaSocio::agregarSocio(Socio* p) {
 
 }
 
-ListaSocio::~ListaSocio() {
-}
+
 int ListaSocio::getCant() {
 	return cantidad;
 }
@@ -42,7 +41,7 @@ Socio* ListaSocio::buscarSocio(string cedula) {
 	Socio* elSocio = NULL;
 	while (ultimo != NULL) {
 		elSocio =	ultimo->obtenerDato();
-		if (elSocio->getNumCedula == ultimo) {
+		if (elSocio->getNumCedula() == cedula) {
 			return elSocio;
 		}
 		ultimo = ultimo->obtenerSiguiente();
@@ -64,18 +63,18 @@ string ListaSocio::toString() {
 	return s.str();
 }
 
-//string ListaSocio::datosBasicos(){
-	//stringstream s;
+string ListaSocio::datosBasicos(){
+	stringstream s;
 
-	//ultimo = primero;
+	ultimo = primero;
 
-	//Socio* soc;
+	Socio* soc;
 
-	//while (ultimo != NULL) {
-		//soc = ultimo->obtenerDato();
-		//s << soc.;
-		//actual = actual->obtenerSiguiente();
-	//}
+	while (ultimo != NULL) {
+		soc = ultimo->obtenerDato();
+		s << soc->toString();
+		ultimo = ultimo->obtenerSiguiente();
+	}
 
-	//return s.str();
-//}
+	return s.str();
+}

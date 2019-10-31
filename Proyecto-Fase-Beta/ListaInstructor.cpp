@@ -37,7 +37,7 @@ Instructor* ListaInstructor::buscarInstructor(string id) { //pendiente
 	Instructor* instruc = NULL;
 	while (ultimo != NULL) {
 		instruc = ultimo->obtenerDato();
-		if (instruc->obtenerDato() == id) {
+		if (instruc->getNumCedula() == id) { //Revisar esta linea.
 			return instruc;
 		}
 		ultimo = ultimo->obtenerSiguiente();
@@ -51,9 +51,9 @@ string ListaInstructor::toString() { //pendiente
 	Instructor* instruct;
 
 	while (ultimo != NULL) {
-		instruct = actual->obtenerDato();
+		instruct = ultimo->obtenerDato();
 		r << instruct->toString();
-		actual = actual->obtenerSiguiente();
+		ultimo = ultimo->obtenerSiguiente();
 	}
 
 	return r.str();

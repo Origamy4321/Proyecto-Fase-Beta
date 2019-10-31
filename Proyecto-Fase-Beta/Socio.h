@@ -17,7 +17,6 @@ public:
 
 	Socio();
 
-	~Socio();
 
 	const string& getFechaInscripcion() const;
 
