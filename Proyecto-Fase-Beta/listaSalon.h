@@ -1,30 +1,31 @@
 #pragma once
-#include"nodoSalon.h"
+#include"NodoSalon.h"
 
-class listaSalon
+class ListaSalon
 {
-	nodoSalon* primero;
-	nodoSalon* actual;
+	NodoSalon* primero;
+	NodoSalon* actual;
 
 public:
 
-	listaSalon();
+	ListaSalon();
 
-	virtual ~listaSalon();
+	virtual ~ListaSalon();
 
-	void insertarInicio(Salon& salon);
+	void insertarInicio(Salon* salon);
 
 	int totalNodos();
 
-	nodoSalon* getPrimero();
+	NodoSalon* getPrimero();
 
-	void setPrimer(nodoSalon* primero);
+	void setPrimer(NodoSalon* primero);
 
-	nodoSalon* getActual();
+	NodoSalon* getActual();
 
-	void setActual(nodoSalon* actual);
+	void setActual(NodoSalon* actual);
 
 	string toString();
 
-};
+	Salon* buscarSalon(string);
 
+};

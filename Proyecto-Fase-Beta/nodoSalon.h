@@ -1,31 +1,31 @@
 #pragma once
 #include"Salon.h"
-class nodoSalon
+class NodoSalon
 {
 private:
-	Salon salon;
-	nodoSalon* siguiente;
+
+	Salon* salon;
+	NodoSalon* siguiente;
 
 public:
 
-	nodoSalon();
+	NodoSalon();
 
-	nodoSalon(Salon salon, nodoSalon* siguiente);
+	NodoSalon(Salon* salon, NodoSalon* siguiente);
 
-	virtual ~nodoSalon();
+	virtual ~NodoSalon();
 
-	Salon& getSalon();
+	Salon* getSalon();
 
-	void setSalon(Salon&);
+	void setSalon(Salon*);
 
-	nodoSalon* getSiguiente();
+	NodoSalon* getSiguiente();
 
-	void setSiguiente(nodoSalon* elSiguiente);
+	void setSiguiente(NodoSalon* elSiguiente);
 
 	string toString();
 
-	
-	
+
+
 
 };
-

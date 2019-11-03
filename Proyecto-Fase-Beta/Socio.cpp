@@ -1,10 +1,7 @@
 #include"Socio.h"
 
 
-Socio::Socio(const string& nombre, const string& correo, const string& telefono, const string& numCedula,
-	const string& fechaInscripcion, Instructor* instructor) : Persona(nombre, correo, telefono, numCedula),
-	fechaInscripcion(fechaInscripcion),
-	instructor(instructor) {}
+
 
 const string& Socio::getFechaInscripcion() const {
 	return fechaInscripcion;
@@ -29,5 +26,33 @@ string Socio::toString() {
 
 	return reporte;
 }
+
+Rutina* Socio::getRutinas() const {
+	return rutinas;
+}
+
+void Socio::setRutinas(Rutina* rutinas) {
+	Socio::rutinas = rutinas;
+}
+
+Socio::Socio() {
+
+}
+
+ListaRegistro* Socio::getListaRegistro() const {
+	return listaRegistro;
+}
+
+void Socio::setListaRegistro(ListaRegistro* listaRegistro) {
+	Socio::listaRegistro = listaRegistro;
+}
+
+Socio::Socio(const string& nombre, const string& correo, const string& telefono, const string& numCedula,
+	const string& fechaInscripcion, Instructor* instructor, Rutina* rutinas, ListaRegistro* listaRegistro)
+	: Persona(nombre, correo, telefono, numCedula), fechaInscripcion(fechaInscripcion), instructor(instructor),
+	rutinas(rutinas), listaRegistro(listaRegistro) {}
+
+
+
 
 

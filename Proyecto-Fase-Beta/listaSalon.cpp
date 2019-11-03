@@ -1,25 +1,25 @@
-#include "listaSalon.h"
+#include "ListaSalon.h"
 
-listaSalon::listaSalon() {
+ListaSalon::ListaSalon() {
 
 	primero = nullptr;
 	actual = nullptr;
 }
 
 
-listaSalon::~listaSalon() {
+ListaSalon::~ListaSalon() {
 
 	while (primero != nullptr) {
 
 		actual = primero;
 		primero = primero->getSiguiente();
-		delete(actual);
+		delete (actual);
 	}
 }
 
-void listaSalon::insertarInicio(Salon& salon) {
+void ListaSalon::insertarInicio(Salon* salon) {
 
-	actual = new nodoSalon(salon, NULL);
+	actual = new NodoSalon(salon, nullptr);
 	if (primero == nullptr) {
 
 		primero = actual;
@@ -30,7 +30,7 @@ void listaSalon::insertarInicio(Salon& salon) {
 	}
 }
 
-string listaSalon::toString() {
+string ListaSalon::toString() {
 
 	string resultado;
 	actual = primero;
@@ -44,23 +44,40 @@ string listaSalon::toString() {
 
 }
 
-void listaSalon::setActual(nodoSalon*_actual) {
+void ListaSalon::setActual(NodoSalon* _actual) {
 
 	actual = _actual;
 
 }
-void listaSalon::setPrimer(nodoSalon* primer) {
+
+void ListaSalon::setPrimer(NodoSalon* primer) {
 
 	primero = primer;
 
 }
 
-nodoSalon* listaSalon::getActual() {
+NodoSalon* ListaSalon::getActual() {
 
 	return actual;
 }
 
-nodoSalon* listaSalon::getPrimero() {
+NodoSalon* ListaSalon::getPrimero() {
 
 	return primero;
 }
+
+Salon* ListaSalon::buscarSalon(string codigo) {
+
+	actual = primero;
+	Salon* salon = nullptr;
+	while (actual != nullptr) {
+		salon = actual->getSalon();
+		if (salon->getCodigo() == codigo) {
+			return salon;
+		}
+		actual = actual->getSiguiente();
+	}
+
+	return nullptr;
+}
+

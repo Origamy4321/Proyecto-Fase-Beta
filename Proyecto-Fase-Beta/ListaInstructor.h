@@ -1,14 +1,13 @@
-
 #include<iostream>
-#include"nodoInstructor.h"
+#include"NodoInstructor.h"
 
 class ListaInstructor {
 
 private:
 
-	nodoInstructor* primero;
+	NodoInstructor* primero;
 
-	nodoInstructor* ultimo;
+	NodoInstructor* ultimo;
 
 	int cantidad;
 
@@ -29,5 +28,4 @@ public:
 	virtual void agregarInstructor(Instructor*);
 
 };
-
 

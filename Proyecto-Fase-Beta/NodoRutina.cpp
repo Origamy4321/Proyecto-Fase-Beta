@@ -6,9 +6,6 @@ NodoRutina::NodoRutina(Rutina* dato, NodoRutina* siguiente)
 }
 
 NodoRutina::~NodoRutina() {
-	/*if (siguiente != NULL) {
-		delete siguiente;
-	}*/
 }
 
 Rutina* NodoRutina::obtenerDato() {
@@ -26,3 +23,4 @@ void NodoRutina::definirDato(Rutina* r) {
 void NodoRutina::fijarSiguiente(NodoRutina* next) {
 	siguiente = next;
 }
+

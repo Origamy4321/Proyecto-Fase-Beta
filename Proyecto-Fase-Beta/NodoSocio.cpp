@@ -1,25 +1,23 @@
-#include"nodoSocio.h"
+#include"NodoSocio.h"
 
-nodoSocio::nodoSocio(Socio* dato, nodoSocio* siguiente)
-	: dato(dato), siguiente(siguiente) {
+NodoSocio::NodoSocio(NodoSocio* siguiente, Socio* dato) : siguiente(siguiente), dato(dato) {}
+
+NodoSocio::~NodoSocio() {
+
 }
 
-nodoSocio::~nodoSocio() {
-		
-}
-
-Socio* nodoSocio::obtenerDato() {
-	return dato;
-}
-
-nodoSocio* nodoSocio::obtenerSiguiente() {
+NodoSocio* NodoSocio::getSiguiente() const {
 	return siguiente;
 }
 
-void nodoSocio::definirDato(Socio* x) {
-	dato = x;
+void NodoSocio::setSiguiente(NodoSocio* siguiente) {
+	NodoSocio::siguiente = siguiente;
 }
 
-void nodoSocio::fijarSiguiente(nodoSocio* sig) {
-	siguiente = sig;
+Socio* NodoSocio::getDato() const {
+	return dato;
+}
+
+void NodoSocio::setDato(Socio* dato) {
+	NodoSocio::dato = dato;
 }

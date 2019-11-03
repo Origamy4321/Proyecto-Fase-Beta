@@ -1,7 +1,7 @@
 #include"Rutina.h"
 
 Rutina::Rutina(string descripcion, string codigo, Salon* salonazo
-	, string fechaInicio, string fechaFinal, string objetivo, Instructor* instructor, ListaSocio* lista){
+	, string fechaInicio, string fechaFinal, string objetivo, Instructor* instructor, ListaSocio* lista) {
 
 	this->descripcion = descripcion;
 	this->codigo = codigo;

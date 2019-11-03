@@ -1,19 +1,24 @@
+#pragma once
 #include "Instructor.h"
 #include"Persona.h"
-#pragma once
-class Socio: public Persona {
+#include "Rutina.h"
+#include "ListaRegistro.h"
+class Rutina;
+class Socio : public Persona {
 
 private:
 
 	string fechaInscripcion;
 	Instructor* instructor;
+	Rutina* rutinas;
+	ListaRegistro* listaRegistro;
 
 
 public:
 
 
 	Socio(const string& nombre, const string& correo, const string& telefono, const string& numCedula,
-		const string& fechaInscripcion, Instructor* instructor);
+		const string& fechaInscripcion, Instructor* instructor, Rutina* rutinas, ListaRegistro* listaRegistro);
 
 	Socio();
 
@@ -28,7 +33,13 @@ public:
 
 	string toString();
 
+	Rutina* getRutinas() const;
 
+	void setRutinas(Rutina* rutinas);
 
+	ListaRegistro* getListaRegistro() const;
+
+	void setListaRegistro(ListaRegistro* listaRegistro);
 
 };
+

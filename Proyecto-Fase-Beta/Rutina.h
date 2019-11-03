@@ -9,14 +9,10 @@
 #include "Instructor.h"
 #include "Socio.h"
 #include "ListaSocio.h"
-using std::string;
-class Socio;
-class Rutina;
-class Salon;
-class Instructor;
-class ListaSocio;
-using namespace std;
 
+using namespace std;
+class Socio;
+class ListaSocio;
 class Rutina {
 
 private:
@@ -29,15 +25,15 @@ private:
 	Instructor* instr;
 	ListaSocio* list;
 
-public:	
+public:
 	Rutina(string, string, Salon*, string, string, string, Instructor*, ListaSocio*);
 	virtual ~Rutina();
 	virtual void setDescripcion(string);
 	virtual void setCodigo(string);
 	virtual void setSalon(Salon*);
-	
+
 	virtual void setSocio(ListaSocio*);
-	
+
 	virtual string getDescripcion();
 	virtual string getCodigo();
 	virtual Salon* getSalon();

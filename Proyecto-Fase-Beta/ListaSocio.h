@@ -1,13 +1,14 @@
-
+#pragma once
 #include<iostream>
-#include"nodoSocio.h"
-
+#include"NodoSocio.h"
+class Socio;
+class NodoSocio;
 class ListaSocio {
 
 private:
 
-	nodoSocio* primero;
-	nodoSocio* ultimo; //ULTIMO ES IGUAL A ACTUAL.
+	NodoSocio* primero;
+	NodoSocio* ultimo; //ULTIMO ES IGUAL A ACTUAL.
 	int cantidad;
 
 public:
@@ -27,5 +28,10 @@ public:
 
 	virtual void agregarSocio(Socio*);
 
-};
+	void eliminarSocio(string);
 
+
+
+
+
+};

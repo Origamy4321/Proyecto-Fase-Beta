@@ -1,7 +1,7 @@
 #ifndef LISTA_RUTINA_H
 #define LISTA_RUTINA_H
 #include<iostream>
-#include"nodoRutina.h"
+#include"NodoRutina.h"
 using std::string;
 class NodoRutina;
 class ListaRutina;

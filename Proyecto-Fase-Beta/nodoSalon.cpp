@@ -1,30 +1,29 @@
-#include "nodoSalon.h"
+#include "NodoSalon.h"
 
-nodoSalon::nodoSalon(Salon salon, nodoSalon* siguiente):salon(salon), siguiente(siguiente){}
+NodoSalon::NodoSalon(Salon* salon, NodoSalon* siguiente) : salon(salon), siguiente(siguiente) {}
 
-nodoSalon::~nodoSalon(){}
+NodoSalon::~NodoSalon() {}
 
-Salon& nodoSalon::getSalon() {
+Salon* NodoSalon::getSalon() {
 
 	return salon;
 }
 
-void nodoSalon::setSalon(Salon& elSalon) {
+void NodoSalon::setSalon(Salon* elSalon) {
 
 	salon = elSalon;
 }
 
-nodoSalon *nodoSalon::getSiguiente() {
+NodoSalon* NodoSalon::getSiguiente() {
 
 	return siguiente;
 }
 
-void nodoSalon::setSiguiente(nodoSalon *siguiente) {
-    nodoSalon::siguiente = siguiente;
+void NodoSalon::setSiguiente(NodoSalon* siguiente) {
+	NodoSalon::siguiente = siguiente;
 }
 
-string nodoSalon::toString() {
-	return salon.toString();
+string NodoSalon::toString() {
+	return salon->toString();
 }
-
 

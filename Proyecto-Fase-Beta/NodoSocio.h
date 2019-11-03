@@ -1,33 +1,27 @@
-#ifndef NODO_SOCIO_H
-#define NODO_SOCIO_H
+#pragma once
 #include<iostream>
 #include"Socio.h"
 
-
-class nodoSocio {
+class Socio;
+class NodoSocio {
 
 private:
 
-	nodoSocio* siguiente;
+	NodoSocio* siguiente;
 
 	Socio* dato;
 
 public:
 
-	nodoSocio(Socio*, nodoSocio*);
+	NodoSocio(NodoSocio* siguiente, Socio* dato);
 
-	virtual ~nodoSocio();
+	virtual ~NodoSocio();
 
-	virtual Socio* obtenerDato();
+	NodoSocio* getSiguiente() const;
 
-	virtual nodoSocio* obtenerSiguiente();
+	void setSiguiente(NodoSocio* siguiente);
 
-	virtual void definirDato(Socio*);
+	Socio* getDato() const;
 
-	virtual void fijarSiguiente(nodoSocio*);
-
-
-
+	void setDato(Socio* dato);
 };
-#endif //NODO_SOCIO_H
-

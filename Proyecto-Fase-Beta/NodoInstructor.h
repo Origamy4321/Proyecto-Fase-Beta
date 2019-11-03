@@ -2,31 +2,27 @@
 #include<iostream>
 #include"Instructor.h"
 
-class nodoInstructor
+class NodoInstructor
 {
- 
-	private:
 
-		nodoInstructor* siguiente;
+private:
 
-		Instructor* dato;
+	NodoInstructor* siguiente;
 
-	public:
+	Instructor* dato;
 
-		nodoInstructor(Instructor*, nodoInstructor*);
+public:
 
-		virtual ~nodoInstructor();
+	NodoInstructor(NodoInstructor* siguiente, Instructor* dato);
 
-		virtual Instructor* obtenerDato();
+	NodoInstructor* getSiguiente() const;
 
-		virtual nodoInstructor* obtenerSiguiente();
+	void setSiguiente(NodoInstructor* siguiente);
 
-		virtual void definirDato(Instructor*);
+	Instructor* getDato() const;
 
-		virtual void fijarSiguiente(nodoInstructor*);
+	void setDato(Instructor* dato);
 
+	virtual ~NodoInstructor();
 
-
-	
 };
-

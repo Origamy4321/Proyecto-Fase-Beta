@@ -1,5 +1,4 @@
-#ifndef NODO_RUTINA_H
-#define NODO_RUTINA_H
+#pragma once
 #include<iostream>
 #include"Rutina.h"
 class Rutina;
@@ -23,5 +22,4 @@ public:
 
 
 };
-#endif //#define NODO_RUTINA_H
 
