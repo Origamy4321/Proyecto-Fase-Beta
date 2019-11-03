@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Archivo.cpp" />
     <ClCompile Include="Clase.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="Gimnasio.cpp" />
@@ -176,6 +177,7 @@
     <ClCompile Include="Socio.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Archivo.h" />
     <ClInclude Include="Clase.h" />
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="Gimnasio.h" />
