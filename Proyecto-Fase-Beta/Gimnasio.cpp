@@ -95,14 +95,14 @@ Salon* Gimnasio::buscarSalon(string codigo) {
 	return listaSalon->buscarSalon(codigo);
 }
 
-ListaSocio* Gimnasio::getListaSocios() {
-	return nullptr;
+int Gimnasio::getListaSocios() {
+	return listaSocio->getCant();
 }
 
-ListaClase* Gimnasio::getListaClase() {
-	return nullptr;
+string Gimnasio::getListaClase() {
+	return listaClase->imprimirListaClase();
 }
 
-ListaInstructor* Gimnasio::getListaInstructor() {
-	return nullptr;
+string Gimnasio::getListaInstructor() {
+	return listaInstructor->toString();
 }

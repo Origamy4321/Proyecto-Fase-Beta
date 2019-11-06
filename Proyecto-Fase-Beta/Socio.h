@@ -12,13 +12,14 @@ private:
 	Instructor* instructor;
 	Rutina* rutinas;
 	ListaRegistro* listaRegistro;
+	Fecha* fecha;
 
 
 public:
 
 
 	Socio(const string& nombre, const string& correo, const string& telefono, const string& numCedula,
-		const string& fechaInscripcion, Instructor* instructor, Rutina* rutinas, ListaRegistro* listaRegistro);
+		const string& fechaInscripcion, Instructor* instructor, Rutina* rutinas);
 
 	Socio();
 

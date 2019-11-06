@@ -22,7 +22,9 @@ string Socio::toString() {
 	string reporte;
 
 	reporte = +"Los datos del socio son los siguientes" + Persona::toString() + "Fecha de inscripcion: " +
-		fechaInscripcion + "El instructor asignado es: " + instructor->getNombre() + "\n";
+		fechaInscripcion + "El instructor asignado es: " + instructor->getNombre() + "Las rutinas del socio son las siguientes:"
+		+ rutinas->getDescripcion();
+
 
 	return reporte;
 }
@@ -48,9 +50,13 @@ void Socio::setListaRegistro(ListaRegistro* listaRegistro) {
 }
 
 Socio::Socio(const string& nombre, const string& correo, const string& telefono, const string& numCedula,
-	const string& fechaInscripcion, Instructor* instructor, Rutina* rutinas, ListaRegistro* listaRegistro)
+	const string& fechaInscripcion, Instructor* instructor, Rutina* rutinas)
 	: Persona(nombre, correo, telefono, numCedula), fechaInscripcion(fechaInscripcion), instructor(instructor),
-	rutinas(rutinas), listaRegistro(listaRegistro) {}
+	rutinas(rutinas) {
+
+	listaRegistro = new ListaRegistro();
+
+}
 
 
 

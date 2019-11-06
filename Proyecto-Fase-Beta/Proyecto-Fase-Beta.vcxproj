@@ -157,6 +157,7 @@
     <ClCompile Include="Gimnasio.cpp" />
     <ClCompile Include="Inscripcion.cpp" />
     <ClCompile Include="Instructor.cpp" />
+    <ClCompile Include="Interfaz.cpp" />
     <ClCompile Include="ListaClase.cpp" />
     <ClCompile Include="ListaInstructor.cpp" />
     <ClCompile Include="ListaRegistro.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="Gimnasio.h" />
     <ClInclude Include="Inscripcion.h" />
     <ClInclude Include="Instructor.h" />
+    <ClInclude Include="Interfaz.h" />
     <ClInclude Include="ListaClase.h" />
     <ClInclude Include="ListaInstructor.h" />
     <ClInclude Include="ListaRegistro.h" />
