@@ -19,7 +19,7 @@ void Archivo::salvarDatosClase(){
 
 void Archivo::recuperarDatosClase(){
 	
-	//this->limpiarContenedor();
+	//this->limpiarContenedor(); m
 
 	Clase c;     
 
