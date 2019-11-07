@@ -19,7 +19,7 @@ void Archivo::salvarDatosClase(){
 
 void Archivo::recuperarDatosClase(){
 	
-	//this->limpiarContenedor(); m
+	//this->limpiarContenedor(); 
 
 	Clase c;     
 
@@ -27,7 +27,7 @@ void Archivo::recuperarDatosClase(){
 	if (is) {
 		is >> c;
 		while (!is.eof()) {
-			Clase* ptr = new Clase(c.getNombre(), c.getIdentifi(), c.getEdad(), c.getEstatura()); //Modificar con los atributos de cada clase
+			Clase* ptr = new Clase(c.getNombre(), c.getElInstructor(), c.getHoras(), c.getCapacidad(), c.getElSalon()); //Modificar con los atributos de cada clase
 			this->insertarClase(ptr);
 			is >> c;
 		}
