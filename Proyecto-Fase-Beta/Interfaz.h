@@ -29,9 +29,9 @@ public:
 
 	void eliminarInstructor();
 
-	void asignarInstructorAsocio();
+	void asignarInstructorASocio();
 
-	void asignarRutinaAsocio();
+	void asignarRutinaASocio();
 
 	void buscarRutina();
 
@@ -63,11 +63,20 @@ public:
 
 	void obtenerInstructorConMayorCalfica();
 
+	void actualizarRuVencidas();
+
+	void  incluirSocioAGrupo();
+
+	void asignarIntructorGrupo();
+
+	void desmatricularSociosDeGrupo();
 
 
+	bool validacionDeNumeroEntero(string numero);
 
+	void registrarNotaDeSocioAInstructor();
 
-
+	void obtenerInstructorConMayorCalif()
 
 
 

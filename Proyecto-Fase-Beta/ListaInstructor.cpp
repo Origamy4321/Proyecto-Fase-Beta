@@ -1,3 +1,4 @@
+#pragma once
 #include"ListaInstructor.h"
 #include<sstream>
 
@@ -40,7 +41,7 @@ Instructor* ListaInstructor::buscarInstructor(string id) { //pendiente
 	Instructor* instruc = NULL;
 	while (ultimo != NULL) {
 		instruc = ultimo->getDato();
-		if (instruc->getNumCedula() == id) { //Revisar esta linea.
+		if (instruc->getCedula()== id) { //Revisar esta linea.
 			return instruc;
 		}
 		ultimo = ultimo->getSiguiente();

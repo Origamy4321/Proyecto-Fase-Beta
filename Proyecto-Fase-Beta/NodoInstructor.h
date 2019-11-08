@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include"Instructor.h"
+class Instructor;
 
 class NodoInstructor
 {

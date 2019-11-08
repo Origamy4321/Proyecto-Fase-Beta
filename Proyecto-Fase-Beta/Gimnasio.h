@@ -59,15 +59,19 @@ public:
 
 	Salon* buscarSalon(string);
 
-	int getListaSocios();
+	string getListaSocios();
 
 	string getListaClase();
 
 	string getListaInstructor();
 
+	int getTamListRut();
 
+	ListaRutina* getRutVencida(int, int, int);
 
+	int getTamanioListaSalones();
 
+	int getCantidadListaIns();
 
 
 };

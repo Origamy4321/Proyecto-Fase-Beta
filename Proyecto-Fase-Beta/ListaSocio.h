@@ -1,6 +1,9 @@
 #pragma once
 #include<iostream>
+#include<string>
+#include<sstream>
 #include"NodoSocio.h"
+using namespace std;
 class Socio;
 class NodoSocio;
 class ListaSocio {
@@ -29,6 +32,15 @@ public:
 	virtual void agregarSocio(Socio*);
 
 	void eliminarSocio(string);
+
+	float pedirNotasPorSocio();
+
+	void desasignarTodosLosSocios();
+
+	ListaSocio* getListita();
+
+	virtual ~ListaSocio();
+
 
 
 

@@ -95,8 +95,8 @@ Salon* Gimnasio::buscarSalon(string codigo) {
 	return listaSalon->buscarSalon(codigo);
 }
 
-int Gimnasio::getListaSocios() {
-	return listaSocio->getCant();
+string Gimnasio::getListaSocios() {
+	return listaSocio->toString();
 }
 
 string Gimnasio::getListaClase() {
@@ -105,4 +105,20 @@ string Gimnasio::getListaClase() {
 
 string Gimnasio::getListaInstructor() {
 	return listaInstructor->toString();
+}
+
+int Gimnasio::getTamListRut() {
+	return listaRutina->getCantidad();
+}
+
+ListaRutina* Gimnasio::getRutVencida(int d, int m, int a) {
+	return listaRutina->getVencidas(d, m, a);
+}
+
+int Gimnasio::getTamanioListaSalones() {
+	return listaSalon->getTamanioLista();
+}
+
+int Gimnasio::getCantidadListaIns() {
+	return listaInstructor->getCantidad();
 }

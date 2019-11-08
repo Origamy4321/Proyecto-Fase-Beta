@@ -1,47 +1,58 @@
-#ifndef RUTINA_H
-#define RUTINA_H
-#include<iostream>
-#include<sstream>
-#include<string>
-#include<stdlib.h>
-#include<time.h>
-#include "Salon.h"
-#include "Instructor.h"
-#include "Socio.h"
-#include "ListaSocio.h"
-
+#pragma once
+#include"Socio.h"
+#include"Fecha.h"
+#include"ListaInstructor.h"
+#include "coleccionInstruccion.h"
 using namespace std;
+class ListaInstructor;
+class Fecha;
 class Socio;
-class ListaSocio;
-class Rutina {
+class Rutina
+{
 
 private:
-	string descripcion;
+
 	string codigo;
-	Salon* sal;
-	string fechaIN;
-	string fechaEND;
+	string fechaCreada;
+	Fecha* fechaEstFinal;
 	string objetivo;
-	Instructor* instr;
-	ListaSocio* list;
+	Socio* _Socio;
+	coleccionInstruccion* coleccIns;
 
 public:
-	Rutina(string, string, Salon*, string, string, string, Instructor*, ListaSocio*);
+
+	Rutina();
+
+	Rutina(string, string, Fecha*, string, Socio*);
+
+	string getCodigo();
+
+	void setCodigo(string);
+
+	string getFechaCreacion();
+
+	void setFechaCreacion(string);
+
+	Fecha* getFecha();
+
+	void setFecha(Fecha*);
+
+	string getObjetivo();
+
+	void setObjetivo(string);
+
+	Socio* getSocio();
+
+	void setSocio(Socio*);
+
+	string toString();
+
 	virtual ~Rutina();
-	virtual void setDescripcion(string);
-	virtual void setCodigo(string);
-	virtual void setSalon(Salon*);
 
-	virtual void setSocio(ListaSocio*);
+	void setColecc(coleccionInstruccion*);
 
-	virtual string getDescripcion();
-	virtual string getCodigo();
-	virtual Salon* getSalon();
-	virtual void darDatosRutina(Socio*);
-	virtual Instructor* getInstructor();
-	virtual string toString()const;
-
+	coleccionInstruccion* getColecc();
 
 
 };
-#endif //RUTINA_H
+

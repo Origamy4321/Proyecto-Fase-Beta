@@ -3,6 +3,7 @@
 #include"Persona.h"
 #include "Rutina.h"
 #include "ListaRegistro.h"
+class Instructor;
 class Rutina;
 class Socio : public Persona {
 

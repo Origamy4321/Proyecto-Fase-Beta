@@ -1,5 +1,11 @@
+#pragma once
 #include<iostream>
+#include"Socio.h"
 #include"NodoInstructor.h"
+#include"Instructor.h"
+class Instructor;
+class Socio;
+class NodoInstructor;
 
 class ListaInstructor {
 

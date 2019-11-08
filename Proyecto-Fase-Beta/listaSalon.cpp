@@ -4,6 +4,7 @@ ListaSalon::ListaSalon() {
 
 	primero = nullptr;
 	actual = nullptr;
+	can = 0;
 }
 
 
@@ -81,3 +82,11 @@ Salon* ListaSalon::buscarSalon(string codigo) {
 	return nullptr;
 }
 
+void ListaSalon::agregar(Salon* sal) {
+	primero = new NodoSalon(sal, primero);
+	can++;
+}
+
+int ListaSalon::getTamanioLista() {
+	return can;
+}

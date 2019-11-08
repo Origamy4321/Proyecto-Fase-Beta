@@ -28,6 +28,12 @@ public:
 
 	Clase* buscarGrupo(string, string);
 
+	ListaClase* getListaClase();
+
+	ListaClase* devuelveListaConSalonesIgu(Salon*);
+
+	string imprimirListaGrupo();
+
 
 
 };

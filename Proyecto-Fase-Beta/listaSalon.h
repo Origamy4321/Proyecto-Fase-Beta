@@ -5,6 +5,7 @@ class ListaSalon
 {
 	NodoSalon* primero;
 	NodoSalon* actual;
+	int can;
 
 public:
 
@@ -27,5 +28,11 @@ public:
 	string toString();
 
 	Salon* buscarSalon(string);
+
+	void agregar(Salon*);
+
+	int getTamanioLista();
+
+	virtual ~ListaSalon();
 
 };

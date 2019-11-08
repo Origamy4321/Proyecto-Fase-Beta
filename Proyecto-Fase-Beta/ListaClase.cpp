@@ -55,11 +55,43 @@ Clase* ListaClase::buscarGrupo(string nombre, string hora) {
 	while (ultimo != nullptr) {
 
 		clases = ultimo->getClase();
-		if (clases->getNombre() == nombre && clases->getHoras() == hora) {
+		if (clases->getNombre() == nombre && clases->getHorario() == hora) {
 			return clases;
 		}
 		ultimo = ultimo->getSiguiente();
 	}
 	return NULL;
 
+}
+
+string ListaClase::imprimirListaGrupo() {
+	NodoClase* actual = primero;
+	stringstream s;
+	Clase* grup = NULL;
+	while (actual != NULL) {
+		grup = actual->getClase();
+		s << grup->toString() << endl;
+		actual = actual->getSiguiente();
+	}
+	return s.str();
+}
+
+ListaClase* ListaClase::devuelveListaConSalonesIgu(Salon* s) {
+	NodoClase* actual = primero;
+	Clase* grupito = NULL;
+	Salon* clasecita = NULL;
+	ListaClase* lis = new ListaClase(); //listaGrupo* list = NULL;
+	while (actual != NULL) {
+		grupito = actual->getClase();
+		clasecita = grupito->getSalon();
+		if (clasecita->getCodigo() == s->getCodigo()) {
+			lis->agregarClase(grupito);
+		}
+		actual = actual->getSiguiente();
+	}
+	return lis;
+}
+
+ListaClase* ListaClase::getListaClase() {
+	return this;
 }

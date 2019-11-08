@@ -153,9 +153,11 @@
   <ItemGroup>
     <ClCompile Include="Archivo.cpp" />
     <ClCompile Include="Clase.cpp" />
+    <ClCompile Include="coleccionInstruccion.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="Gimnasio.cpp" />
     <ClCompile Include="Inscripcion.cpp" />
+    <ClCompile Include="instruccionesR.cpp" />
     <ClCompile Include="Instructor.cpp" />
     <ClCompile Include="Interfaz.cpp" />
     <ClCompile Include="ListaClase.cpp" />
@@ -180,9 +182,11 @@
   <ItemGroup>
     <ClInclude Include="Archivo.h" />
     <ClInclude Include="Clase.h" />
+    <ClInclude Include="coleccionInstruccion.h" />
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="Gimnasio.h" />
     <ClInclude Include="Inscripcion.h" />
+    <ClInclude Include="instruccionesR.h" />
     <ClInclude Include="Instructor.h" />
     <ClInclude Include="Interfaz.h" />
     <ClInclude Include="ListaClase.h" />

@@ -1,102 +1,94 @@
 ﻿#include"Clase.h"
 
-Clase::Clase(const string& nombre, Instructor* elInstructor, const string& horas, int capacidad, Salon* elSalon,
-	ListaSocio* listaDeSocios) : nombre(nombre), elInstructor(elInstructor), horas(horas),
-	capacidad(capacidad), elSalon(elSalon), listaDeSocios(listaDeSocios) {}
+Clase::Clase() {
+	nombre = "";
+	horario = "";
+	automatico = "";
+	listSo = NULL;
+	ins = NULL;
+	sa = NULL;
+}
+Clase::Clase(string nom, string hor, string au, Instructor* in, Salon* s) //
+{
+	nombre = nom;
+	horario = hor;
+	automatico = au;
+	listSo = new ListaSocio();
+	ins = in;
+	sa = s;
+}
 
-Clase::Clase() {}
+Clase::~Clase() {
+	delete listSo;
+	delete ins;
+	delete sa;
+}
 
-const string& Clase::getNombre() const {
+string Clase::getAutomatico() {
+	return automatico;
+}
+string Clase::getHorario() {
+	return horario;
+}
+string Clase::getNombre() {
 	return nombre;
 }
-
-void Clase::setNombre(const string& nombre) {
-	Clase::nombre = nombre;
+ListaSocio* Clase::getListaSocios() {
+	return listSo;
 }
-
-Instructor* Clase::getElInstructor() const {
-	return elInstructor;
+Instructor* Clase::getInstructor() {
+	return ins;
 }
-
-void Clase::setElInstructor(Instructor* elInstructor) {
-	Clase::elInstructor = elInstructor;
+Salon* Clase::getSalon() {
+	return sa;
 }
-
-const string& Clase::getHoras() const {
-	return horas;
+void Clase::setAutomatico(string a) {
+	automatico = a;
 }
-
-void Clase::setHoras(const string& horas) {
-	Clase::horas = horas;
+void Clase::setHorario(string s) {
+	horario = s;
 }
-
-int Clase::getCapacidad() const {
-	return capacidad;
+void Clase::setNombre(string nom) {
+	nombre = nom;
 }
-
-void Clase::setCapacidad(int capacidad) {
-	Clase::capacidad = capacidad;
+void Clase::setInstructor(Instructor* in) {
+	ins = in;
 }
-
-Salon* Clase::getElSalon() const {
-	return elSalon;
+void Clase::setListaSocios(ListaSocio* list) {
+	listSo = list;
 }
-
-void Clase::setElSalon(Salon* elSalon) {
-	Clase::elSalon = elSalon;
+void Clase::setSalon(Salon* s) {
+	sa = s;
 }
-
-ListaSocio* Clase::getListaDeSocios() const {
-	return listaDeSocios;
+void Clase::agregar(Socio* a) {
+	return listSo->agregarSocio(a);
 }
-
-void Clase::setListaDeSocios(ListaSocio* listaDeSocios) {
-	Clase::listaDeSocios = listaDeSocios;
-}
-
-void Clase::agregaSocios(Socio* s) {
-	return listaDeSocios->agregarSocio(s);
-
-}
-
 string Clase::toString() {
-
-	stringstream s;
-
-	s << "----Los Datos de la clase son los siguientes:------" << endl;
-	s << endl;
-	s << "nombre: " << nombre << endl;
-	s << endl;
-	s << "Horario: " << horas << endl;
-	s << endl;
-	s << "Codigo: " << capacidad << endl;
-	s << endl;
-	if (elInstructor != nullptr) {
-		s << "El instructor a cargo es: " << elInstructor->getNombre() << endl;
-		s << endl;
+	stringstream p;
+	p << "---------DATOS DEL GRUPO---------" << endl;
+	p << "Nombre : " << nombre << endl;
+	p << "Horario :" << horario << endl;
+	p << "Codigo :" << automatico << endl;
+	if (ins != NULL) {
+		p << "Instructor asignado" << ins->getNombre() << endl;
 	}
 	else {
-		s << "No hay un instructor asignado todavía" << endl;
+		p << "Instructor asignado" << ins << endl;
 	}
-	if (elSalon != nullptr) {
-		s << "El codigo del salon es: " << elSalon->getCodigo() << endl;
-		s << endl;
-	}
-	else {
-
-		s << "No hay salon asignando" << endl;
-	}
-	if (listaDeSocios->getCant() > 0) {
-
-		s << "Se muestran los socios inscritos" << endl;
-		s << listaDeSocios->toString() << endl;
-
+	if (sa != NULL) {
+		p << "Codigo del salon asignado " << sa->getCodigo() << endl;
 	}
 	else {
-
-		s << "No hay socios inscritos en esta clase" << endl;
+		p << "Codigo del salon asignado " << sa << endl;
 	}
+	if (listSo->getCant() > 0) {
+		p << "Socios inscritos..." << endl;
+		p << listSo->toString() << endl;
+	}
+	else {
+		p << "No hay socios matriculados en este grupo" << endl;
+	}
+	return p.str();
 
-	return s.str();
 
 }

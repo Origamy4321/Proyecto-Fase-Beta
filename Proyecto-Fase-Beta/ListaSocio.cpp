@@ -111,3 +111,41 @@ void ListaSocio::eliminarSocio(string id) {
 	}
 
 }
+
+float ListaSocio::pedirNotasPorSocio() {
+	NodoSocio* actual = primero;
+	int nota;
+	float acumulado = 0;
+	Socio* soci = NULL;
+	while (actual != NULL) {
+		soci = actual->getDato();
+		cout << "Nombre del socio: " << soci->getNom() << endl;
+		cout << "Nota asignada a instructor: ";
+		cin >> nota;
+		if (nota >= 0 || nota <= 100) {
+			acumulado += nota;
+			actual = actual->getSiguiente();
+		}
+		else {
+			return 0.00;
+		}
+	}
+	acumulado = acumulado / this->getCant();
+	return acumulado;
+}
+
+
+ListaSocio* ListaSocio::getListita() {
+	return this;
+}
+
+void ListaSocio::desasignarTodosLosSocios() {
+	NodoSocio* actual = primero;
+	Socio* a = NULL;
+	while (actual != NULL) {
+		a = actual->getDato();
+		a->setInstructor(NULL);
+		actual = actual->getSiguiente();
+	}
+	return;
+}

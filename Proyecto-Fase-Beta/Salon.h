@@ -21,6 +21,7 @@ public:
 	virtual int getCapacidad();
 	virtual ~Salon();
 	virtual string toString()const;
+	virtual void crearCodAu();
 
 
 };

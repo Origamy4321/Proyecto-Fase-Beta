@@ -18,11 +18,19 @@ public:
 
 	void agregarRegistro(RegistroEstadisticas*);
 
+	void eliminarRegistro(float);
+
+	RegistroEstadisticas* buscarRegistro(Fecha*);
+
+	virtual ~ListaRegistro();
+
 	string listaRegistro();
 
 	int cantidadRegistros();
 
 	RegistroEstadisticas* buscar(Fecha*);
+
+	string toString();
 
 };
 
