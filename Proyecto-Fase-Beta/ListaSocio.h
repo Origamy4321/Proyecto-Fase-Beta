@@ -39,7 +39,7 @@ public:
 
 	ListaSocio* getListita();
 
-	virtual ~ListaSocio();
+	
 
 
 

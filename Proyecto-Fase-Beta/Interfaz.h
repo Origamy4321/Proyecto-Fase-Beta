@@ -13,7 +13,6 @@ public:
 
 	Interfaz();
 
-	Interfaz(Gimnasio*);
 
 	~Interfaz();
 
@@ -71,15 +70,23 @@ public:
 
 	void desmatricularSociosDeGrupo();
 
-
 	bool validacionDeNumeroEntero(string numero);
 
 	void registrarNotaDeSocioAInstructor();
 
-	void obtenerInstructorConMayorCalif()
+	void obtenerInstructorConMayorCalif();
+
+	void imprimirListadeSocios();
+
+	int menuPrincipal();
 
 
-
+	int subMenuSocios();
+	int subMenuInstructores();
+	int subMenuGrupos();
+	int subMenuRutinas();
+	int subMenuRegistroEst();
+	int subMenuRegistrarCali();
 
 
 };

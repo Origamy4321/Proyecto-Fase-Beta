@@ -4,7 +4,13 @@
 ListaSocio::ListaSocio() : primero(NULL), ultimo(NULL), cantidad(0) {
 }
 
-ListaSocio::~ListaSocio() {}
+ListaSocio::~ListaSocio() {
+
+	delete primero;
+	delete ultimo;
+
+
+}
 
 
 void ListaSocio::ListaSocio::agregarSocio(Socio* p) {
@@ -119,7 +125,7 @@ float ListaSocio::pedirNotasPorSocio() {
 	Socio* soci = NULL;
 	while (actual != NULL) {
 		soci = actual->getDato();
-		cout << "Nombre del socio: " << soci->getNom() << endl;
+		cout << "Nombre del socio: " << soci->getNombre() << endl;
 		cout << "Nota asignada a instructor: ";
 		cin >> nota;
 		if (nota >= 0 || nota <= 100) {

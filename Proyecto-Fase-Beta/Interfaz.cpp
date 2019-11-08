@@ -1,7 +1,7 @@
 ﻿#include "Interfaz.h"
 
-Interfaz::Interfaz(Gimnasio* gimnasio){
-	Gym = new Gimnasio;
+Interfaz::Interfaz(){
+	Gym = new Gimnasio();
 }
 
 Interfaz::~Interfaz() {
@@ -65,11 +65,10 @@ void Interfaz::incluirSocio() {
 }
 
 void Interfaz::visualizarDatosSocio() {
-
-	ListaSocio* li2; //ARREGLAR
-	if (li2->getCant() > 0) {
+ 
+	if (Gym->getSocios() > 0) {
 		cout << "-----------LISTA COMPLETA DE SOCIOS REGISTRADOS------------" << endl;
-		cout << Gym->imprimirListaSocio<< endl;
+		cout << Gym->imprimirListaSocio()<< endl;
 	}
 	else {
 		cout << "Actualmente no hay socios registrados en el gimnasio." << endl;
@@ -91,7 +90,7 @@ void Interfaz::eliminarSocio() {
 		soc->setListaRegistro(NULL);
 		soc->setFechaInscripcion(NULL);
 		soc->setInstructor(NULL);
-		Gym.eliminarSocio(id); //TERMINAR
+		Gym->eliminarSocio(id); 
 		cout << "El socio con la identificacion " << id << " ha sido correctamente eliminado" << endl;
 	}
 	else {
@@ -126,10 +125,9 @@ void Interfaz::incluirInstructor() {
 	}
 }
 
-void Interfaz::imprimeListaIns() {
+void Interfaz::imprimeListaInstructor() {
 	cout << "-----------------------------------" << endl;
-	ListaInstructor* lpr = Gym->getListaInstructores();
-	if (lpr->getCantidad() > 0) {
+	if (Gym->getCantidadListaIns() > 0) {
 		cout << "A continuacion, se le presenta la lista completa de instructores registrados" << endl;
 		cout << Gym->imprimeInstructor() << endl;
 	}
@@ -151,7 +149,7 @@ void Interfaz::eliminarInstructor() {
 	if (ins != NULL) {
 		list = ins->getListasocio();
 		if (list->getCant() == 0) {
-			Gym->eliminarInstructor(ced);//HACERLO
+			Gym->eliminarInstructor(ced);
 			cout << "El socio con la cedula " << ced << " ha sido correctamente eliminado" << endl;
 		}
 		else {
@@ -168,8 +166,7 @@ void Interfaz::eliminarInstructor() {
 				ins->setListasocio(NULL);
 				ins->setListarutina(NULL);
 				Gym->eliminarInstructor(ced);//HACER ESTE METODO
-				listI = Gym->getListaInstructor();
-				if (listI->getCantidad() > 0) {
+				if (Gym->getCantidadListaIns() > 0) {
 					cout << "A continuacion, se le presenta la nueva lista de instructores" << endl;
 					cout << listI->toString() << endl;
 
@@ -193,8 +190,7 @@ void Interfaz::asignarInstructorASocio() {
 	string cedI, cedS;
 	Instructor* is = NULL;
 	Socio* so = NULL;
-	ListaInstructor* xyz = Gym->getListaInstructor();
-	if (xyz->getCantidad() > 0) {
+	if (Gym->getCantidadListaIns() > 0) {
 		cout << "A continuacion, se le presentan la siguiente lista de instructores registrados" << endl << endl;
 		cout << Gym->imprimeInstructor() << endl;
 		cout << "Ingrese la cedula del instructor que desea asignar a socio" << endl;
@@ -232,96 +228,72 @@ void Interfaz::asignarInstructorASocio() {
 
 void Interfaz::asignarRutinaASocio() {
 	string id;
-	string fechaC, obj, instruccion;
-	int diaF, mesF, anioF;
-	Fecha* fechita = NULL;
-	int repe, serie, num;
-	InstruccionesR* r = NULL;
-	coleccionInstruccion* colecc = NULL;
-	Rutina* rut = NULL;
-	Instructor* i2 = NULL;
-	Socio* soci = NULL;
-	ListaSocio* list = NULL;
-	ListaRutina* listaa = new ListaRutina();
-	ListaInstructor* pwq = Gym->getListaInstructor();
-	if (pwq->getCantidad() > 0) {
-		cout << "A continuacion, se le presentan la siguiente lista de instructores registrados" << endl << endl;
+	string ced;
+	string objetivo;
+	string descrip;
+	string fechita;
+	string codigo;
+	int dia, dia2;
+	int mes, mes2;
+	int annio, an2;
+	if (Gym->getCantidadListaIns() > 0) {
+		cout << "Lista de instructores del gimnasio" << endl;
 		cout << Gym->imprimeInstructor() << endl;
-		cout << "Ingrese la identificacion del instructor" << endl;
-		cout << "Identificacion: ";
+		cout << "Digite la ID del instructor" << endl;
 		cin >> id;
-		i2 = Gym->buscarInstructor(id);
-		if (i2 != NULL) {
-			list = i2->getListasocio();
-			cout << "Se muestra en pantalla la lista de los socios que estan asignados al instructor " << i2->getNombre() << " con la id " << i2->getId() << endl;
-			cout << list->toString() << endl;
-			cout << "Ingrese la identificacion del socio al cual desea asignarle una rutina" << endl;
-			cout << "Identificacion: ";
-			cin >> id;
-			soci = list->buscarSocio(id);
-			if (soci != NULL) {
-
-				cout << "Ingrese la fecha de creacion de la rutina" << endl;
-				cout << "Fecha de creacion: ";
-				cin.ignore();
-				getline(cin, fechaC);
-				cout << endl;
-				cout << "Ingrese la fecha estimada de finalizacion de la rutina" << endl;
-				cout << "Fecha de finalizacion: " << endl;
-				cout << "Dia ( dias solo del 1 al 31) : ";
-				diaF = tomarEntero();
-				cout << endl;
-				cout << "Mes( en numeros) : ";
-				mesF = tomarEntero();
-				cout << endl;
-				cout << "Anio : ";
-				anioF = tomarEntero();
-				cout << endl;
-				fechita = new Fecha(diaF, mesF, anioF);
-				cout << "Ingrese el objetivo de la rutina" << endl;
-				cout << "Objetivo: ";
-				cin.ignore();
-				getline(cin, obj);
-				cout << endl;
-				cout << "Ingrese el numero de instrucciones/ejercicios que consta la rutina" << endl;
-				cout << "Numero: ";
-				cin >> num;
-				rut = new Rutina("", fechaC, fechita, obj, soci);
-				Gym->agregarRutina(rut);
-				colecc = rut->getColecc();
-				colecc->setTam(num);
-				for (int i = 0; i < num; i++) {
-					cout << "Digite el ejercicio # [" << i + 1 << "]" << endl;
+		Instructor* instructorcito = Gym->buscarInstructor(id);
+		if (instructorcito != NULL) {
+			ListaSocio* list = instructorcito->getListasocio();
+			if (list->getCant() > 0) {
+				cout << "Lista de  socios  asignados al instructor " << endl;
+				cout << list->datosBasicos() << endl;
+				cout << "Digite la cedula del socio " << endl;
+				cin >> ced;
+				Socio* soci = list->buscarSocio(ced);
+				if (soci != NULL) {
+					cout << "Digite la fecha de creacion de la rutina" << endl;
+					cout << "Fecha de creacion: ";
 					cin.ignore();
-					getline(cin, instruccion);
-					cout << endl;
-					cout << "Digite el numero de repeticiones del ejercicio " << instruccion << endl;
-					cin >> repe;
-					cout << endl;
-					cout << "Digite el numero de series del ejercicio " << instruccion << endl;
-					cin >> serie;
-					cout << endl;
-					r = new instruccionesR(instruccion, repe, serie);
-					colecc->agregarInstruccion(r);
+					getline(cin, fechita);
+					cout << "Digite la fecha  de finalizacion de la rutina" << endl;
+					cout << "Formato dia:3,mes:4,año:2019" << endl;
+					cout << "Digite el dia" << endl;
+					cin >> dia2;
+					cout << "Digite el mes" << endl;
+					cin >> mes2;
+					cout << "Digite el año" << endl;
+					cin >> an2;
+					Fecha* fechEND = new Fecha(dia2, mes2, an2);
+					cout << "Digite el objetivo de la rutina" << endl;
+					cin.ignore();
+					getline(cin, objetivo);
+					cout << "Digite la descripcion de  la rutina" << endl;
+					cin.ignore();
+					getline(cin, descrip);
+					Rutina* rut = new Rutina(codigo,descrip, fechita, fechEND,objetivo, soci);
+					Gym->agregarRutina(rut);
+					soci->setRutinas(rut);
+					instructorcito->agregarRutina(rut);
+					cout << "La rutina se creo correctamente" << endl;
 				}
-				soci->setRutinas(rut);
-				i2->setListarutina(listaa);
-				listaa->asignarCodigo(rut);
-				cout << "La rutina con el codigo " << rut->getCodigo() << " asociada al socio " << soci->getNombre() << " con la id " << soci->getNumCedula() << " ha sido creada satisfactoriamente" << endl;
-				cout << "Se muestra en pantalla la lista de rutinas actualizada " << endl << endl;
-				cout << Gym->imprimeRutina() << endl;
+				else {
+					cout << "La cedula del socio  no se encuentra en el registro" << endl;
+				}
 			}
 			else {
-				cout << "La cedula " << id << "no corresponde a ningun socio asignado al instructor " << i2->getNombre() << " con la id " << i2->getCedula() << endl;
+				cout << "El instructor no tiene socios Asociados" << endl;
 			}
+
 		}
 		else {
-			cout << "La cedula " << id << " no corresponde a ningun instructor registrado en el gymnasio" << endl;
+			cout << "la ID del instructor no se encontro en el registro" << endl;
 		}
+
 	}
 	else {
-		cout << "Aun no hay instructores registrados en el gimnasio, favor registrar antes usar esta opcion del submenu" << endl;
+		cout << "No hay instructores contratados" << endl;
 	}
+
 }
 
 void Interfaz::buscarRutina() {
@@ -369,7 +341,7 @@ void Interfaz::actualizarRuVencidas() {
 	f = new Fecha(diaF, mesF, anioF);
 	cout << endl;
 	lo = Gym->getRutVencida(diaF, mesF, anioF);
-	if (lo->getN == true) {
+	if (lo->getN() == true) {
 		cout << lo->imprimirListaRutina() << endl;
 		lo->actualizarVencidas(f);
 		cout << "---------------------" << endl;
@@ -411,7 +383,7 @@ void Interfaz::actualizarRegistroEstSocio() {
 		s = Gym->buscarInstructor(ced);
 		if (s != NULL) {
 			a = s->getListasocio();
-			cout << "Se muestra en pantalla, la lista de socios asociados al instructor " << s->getNombre() << " de id " << s->getId() << endl;
+			cout << "Se muestra en pantalla, la lista de socios asociados al instructor " << s->getNombre() << " de id " << s->getCedula() << endl;
 			cout << a->toString() << endl;
 			cout << "Digite la identificacion de el socio al que se desea actualizar el registro " << endl;
 			cout << "Identificacion: ";
@@ -514,15 +486,15 @@ void Interfaz::actualizarRegistroEstSocio() {
 					cin >> GC;
 					Fecha* fi = new Fecha(dia, mes, anio);
 					r->setFecha(fi);
-					r->setPGC(GC); //HACER ESTOS METODOS
-					r->setPMM(MM); //HACER ESTOS METODOS
+					r->setPorcentajeGrasa(GC); //HACER ESTOS METODOS
+					r->setPorcentajeMusculo(MM); //HACER ESTOS METODOS
 					r->setPeso(peso);
 					cout << "El registro con la fecha" << fechota->toString() << " ha sido actualizada correctamente" << endl;
 					cout << "El nuevo registro queda de la siguiente forma" << endl;
 					cout << r->toString() << endl;
 				}
 				else {
-					cout << "La fecha " << fechota->toString() << " no concuerda con ningun registro ingresado a el socio" << socii->getNom() << endl;
+					cout << "La fecha " << fechota->toString() << " no concuerda con ningun registro ingresado a el socio" << socii->getNombre() << endl;
 				}
 
 			}
@@ -794,14 +766,13 @@ void Interfaz::desmatricularSociosDeGrupo() {
 	string nom, ced, hor;
 	int j;
 	Clase* grup = NULL;
-	ListaClase* b = Gym->getListaClase(); //NOTA ARREGLAR
 	ListaSocio* listS = NULL;
 	Socio* soci3 = NULL;
 	Socio* soci4 = NULL;
 	bool bandera1 = false;
-	if (b->getN > 0) {
+	if (Gym->getCantClase() > 0) {
 		cout << "Se le muestra en pantalla la lista de grupos registrados en el gymanasio" << endl;
-		cout << b->imprimirListaGrupo() << endl << endl;
+		cout << Gym->imprimeClase() << endl << endl;
 		cout << "Ingrese el nombre del grupo al cual desea desmatricularle socios" << endl;
 		cout << "Nombre..";
 		cin.ignore();
@@ -961,7 +932,7 @@ void Interfaz::obtenerInstructorConMayorCalif() {
 	if (Gym->getCantidadListaIns() > 0) {
 		cout << "A continuacion, se le mostrara en pantalla, el instructor que posee el promedio de calificacion de desempenio mas alta segun ";
 		cout << " los socios asociados a su nombre" << endl;
-		ListaInstructor* h = Gym->getListaInstructor();
+		ListaInstructor* h = Gym->getListaIns();
 		ListaInstructor* h1 = NULL;
 		h1 = h->determinaMejorIns();
 		cout << "Se muestra en pantalla el(los) socio(s) con mayor calificacion para que sean recompensados" << endl;
@@ -988,3 +959,114 @@ void Interfaz::obtenerInstructorConMayorCalif() {
 
 
 
+void Interfaz::imprimirListadeSocios() {
+
+	cout << Gym->imprimirListaSocio();
+
+}
+
+
+int Interfaz::menuPrincipal() {
+	int num;
+	cout << "--------Bienvenido al sistema--------------" << endl;
+	cout << "Tiene a su disposicion, los siguientes menus" << endl;
+	do {
+		cout << "A cual desea ingresar..." << endl;
+		cout << "1-)Submenu de socio." << endl;
+		cout << "2-)Submenu de instructor" << endl;
+		cout << "3-)Submenu de grupos." << endl;
+		cout << "4-)Submenu de rutinas." << endl;
+		cout << "5-)Submenu de registro estadistico del socio." << endl;
+		cout << "6-)Salir del sistema." << endl;
+		cout << endl;
+		num = tomarEntero();
+
+	} while (!(num > 0 && num < 7));
+	return num;
+}
+int Interfaz::subMenuGrupos() {
+	int op;
+	do {
+		cout << "--------------MENU GRUPOS------------------" << endl;
+		cout << "A continuacion se le presentan las siguientes opciones..." << endl;
+		cout << "1-)Crear un nuevo grupo." << endl;
+		cout << "2-)Asignar Instructor a Grupo" << endl;
+		cout << "3-)Registrar Salon" << endl;
+		cout << "4-)Matricular Socios y Asignar Salon a Grupo" << endl;
+		cout << "5-)Desmatricular Socios de Grupos" << endl;
+		cout << "6-)Visualizar todos los grupos disponibles" << endl;
+		cout << "7-) Visualizar clases por salon " << endl;
+		cout << "8-) Visualizar socios por clase" << endl;;
+		cout << "9-)Regresar al menu principal" << endl;
+		op = tomarEntero();
+	} while (!(op > 0 && op < 10));
+	return op;
+
+
+}
+int Interfaz::subMenuInstructores() {
+	int op;
+	do {
+		cout << "--------------MENU INSTRUCTORES------------------" << endl;
+		cout << "A continuacion se le presentan las siguientes opciones..." << endl;
+		cout << "1-)Registrar nuevo instructor." << endl;
+		cout << "2-)Visualizar informacion del instructor." << endl;
+		cout << "3-)Eliminar instructor." << endl;
+		cout << "4-)Asignar instructor a socio especifico." << endl;
+		cout << "5-)Regresar al menu principal." << endl;
+		op = tomarEntero();
+	} while (!(op > 0 && op < 6));
+	return op;
+
+}
+int Interfaz::subMenuSocios() {
+	int op;
+	do {
+		cout << "--------------MENU SOCIOS------------------" << endl;
+		cout << "A continuacion se le presentan las siguientes opciones..." << endl;
+		cout << "1-)Registrar socio." << endl;
+		cout << "2-)Visualizar datos del socio." << endl;
+		cout << "3-)Eliminar socio." << endl;
+		cout << "4-)Regresar al menu principal." << endl;
+		op = tomarEntero();
+	} while (!(op > 0 && op < 5));
+	return op;
+
+}
+int Interfaz::subMenuRutinas() {
+	int num;
+	do {
+		cout << "---------------MENU RUTINA------------------" << endl;
+		cout << "1-)Asignar rutina a socio." << endl;
+		cout << "2-)Buscar rutina de socio especifico." << endl;
+		cout << "3-)Actualizar rutinas de socios." << endl;
+		cout << "4-)Regresar al menu principal." << endl;
+		cout << "Ingrese alguna de las opciones anteriores" << endl;
+		num = tomarEntero();
+	} while (!(num > 0 && num < 5));
+	return num;
+}
+int Interfaz::subMenuRegistroEst() {
+	int num;
+	do {
+		cout << "---------------MENU REGISTRO ESTADISTICO------------------" << endl;
+		cout << "1-)Incluir o actualizar registro estadistico a socio ." << endl;
+		cout << "2-)Buscar registro estadistico especifico." << endl;
+		cout << "3-)Visualizar registro estadistico de socio especifico" << endl;
+		cout << "4-)Regresar al menu principal." << endl;
+		num = tomarEntero();
+	} while (!(num > 0 && num < 5));
+	return num;
+}
+int Interfaz::subMenuRegistrarCali() {
+	int num;
+	do {
+		cout << "---------------MENU REGISTRO DE CALIFICACIONES Y VISUALIZACION DEL DESEMPENIO------------------" << endl;
+		cout << "1-)Registrar nota de socios a instructores ." << endl;
+		cout << "2-)Visualizar mejor instructor segun nota de socio" << endl;
+		cout << "3-)Registrar nota dada a socios por instructores" << endl;
+		cout << "4-)Visualizar mejor socio por instructor." << endl;
+		num = tomarEntero();
+	} while (!(num > 0 && num < 5));
+	return num;
+}

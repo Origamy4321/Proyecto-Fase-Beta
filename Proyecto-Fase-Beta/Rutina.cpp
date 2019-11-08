@@ -1,14 +1,14 @@
 #include "Rutina.h"
 
-Rutina::Rutina(string code, string fec, Fecha* fech, string obj, Socio* soc) {
+Rutina::Rutina(string code,string des, string fec, Fecha* fech, string obj, Socio* soc) {
 
-
+	descrip = des;
 	codigo = code;
 	fechaCreada = fec;
 	fechaEstFinal = fech;
 	objetivo = obj;
 	_Socio = soc;
-	coleccIns = new coleccionInstruccion(20);
+	
 
 }
 
@@ -19,7 +19,6 @@ Rutina::Rutina() {
 	fechaCreada = "";
 	fechaEstFinal = NULL;
 	objetivo = "";
-	coleccIns = NULL;
 	_Socio = NULL;
 
 }
@@ -96,7 +95,7 @@ string Rutina::toString(){
 		k << "Fecha estimada de finalizacion..." << fechaEstFinal << endl;
 	}
 	k << "Objetivo planteado..." << objetivo << endl;
-	k << coleccIns->imprimir() << endl;
+	k << "descripcion"<<descrip <<endl;
 	if (_Socio != NULL) {
 		k << "El socio asociado a esta rutina es..." << endl;
 		k << "Identificacion del socio: " << _Socio->getNumCedula() << endl;
@@ -109,10 +108,7 @@ string Rutina::toString(){
 
 }
 
-coleccionInstruccion* Rutina::getColecc() {
-	return coleccIns;
-}
-
-void Rutina::setColecc(coleccionInstruccion* cole) {
-	coleccIns = cole;
+Rutina::~Rutina(){
+	delete _Socio;
+	delete fechaEstFinal;
 }

@@ -62,3 +62,58 @@ string ListaInstructor::toString() { //pendiente
 
 	return r.str();
 }
+
+string ListaInstructor::imprimeLista() {
+
+	stringstream j;
+	NodoInstructor* n = primero;
+	Instructor* inst;
+	while (n != NULL) {
+		inst = n->getDato();
+		j << inst->toString() << endl;
+		n = n->getSiguiente();
+	}
+	return j.str();
+
+}
+
+ListaInstructor* ListaInstructor::determinaMejorIns() {
+	NodoInstructor* actual = primero;
+	NodoInstructor* aux = NULL;
+	Instructor* i = NULL;
+	Instructor* h = NULL;
+	Instructor* ganador = NULL;
+	ListaInstructor* a = new ListaInstructor();
+	float caliActual, caliAux;
+	float guardador1 = 0;
+	float guardador2 = 0;
+	if (this->getCantidad() == 1) {
+		i = actual->getDato();
+		a->agregarInstructor(i);
+		return a;
+	}
+	else {
+		while (actual->getSiguiente() != NULL) {
+			i = actual->getDato();
+			aux = actual->getSiguiente();
+			h = aux->getDato();
+			caliAux = h->getCalificacion();
+			caliActual = i->getCalificacion();
+			if (caliAux > caliActual) {
+				guardador2 = caliAux;
+				if (guardador2 > guardador1) {
+					ganador = aux->getDato();
+					actual = actual->getSiguiente();
+				}
+			}
+			else {
+				guardador1 = caliActual;
+				ganador = actual->getDato();
+				actual = actual->getSiguiente();
+			}
+		}
+		a->agregarInstructor(ganador);
+		return a;
+
+	}
+}

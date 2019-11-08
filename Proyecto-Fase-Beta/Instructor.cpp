@@ -68,6 +68,9 @@ void Instructor::setListarutina(ListaRutina* listarutina) {
 	Instructor::listaR = listarutina;
 }
 
+void  Instructor::agregarRutina(Rutina* p) {
+	listaR->agregarRutina(p);
+}
 string Instructor::toString() {
 	stringstream p;
 	p << "---------DATOS DEL INSTRUCTOR-----" << endl;

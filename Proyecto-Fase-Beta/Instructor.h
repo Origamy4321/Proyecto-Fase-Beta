@@ -1,6 +1,7 @@
 #pragma once
 #include"ListaSocio.h"
 #include"ListaRutina.h"
+class Rutina;
 class ListaRutina;
 class ListaSocio;
 class Instructor
@@ -50,6 +51,8 @@ public:
 	float getCalificacion();
 
 	void setCalficacion(float);
+
+	void agregarRutina(Rutina*);
 	
 };
 

@@ -154,6 +154,7 @@
     <ClCompile Include="Archivo.cpp" />
     <ClCompile Include="Clase.cpp" />
     <ClCompile Include="coleccionInstruccion.cpp" />
+    <ClCompile Include="control.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="Gimnasio.cpp" />
     <ClCompile Include="Inscripcion.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="Archivo.h" />
     <ClInclude Include="Clase.h" />
     <ClInclude Include="coleccionInstruccion.h" />
+    <ClInclude Include="control.h" />
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="Gimnasio.h" />
     <ClInclude Include="Inscripcion.h" />

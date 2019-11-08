@@ -33,5 +33,8 @@ public:
 
 	virtual void agregarInstructor(Instructor*);
 
+	virtual string imprimeLista();
+
+	virtual ListaInstructor* determinaMejorIns();
 };
 

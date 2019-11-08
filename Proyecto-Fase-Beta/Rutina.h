@@ -11,19 +11,19 @@ class Rutina
 {
 
 private:
-
+	string descrip;
 	string codigo;
 	string fechaCreada;
 	Fecha* fechaEstFinal;
 	string objetivo;
 	Socio* _Socio;
-	coleccionInstruccion* coleccIns;
+
 
 public:
 
 	Rutina();
 
-	Rutina(string, string, Fecha*, string, Socio*);
+	Rutina(string, string,string, Fecha*, string, Socio*);
 
 	string getCodigo();
 
@@ -49,9 +49,7 @@ public:
 
 	virtual ~Rutina();
 
-	void setColecc(coleccionInstruccion*);
 
-	coleccionInstruccion* getColecc();
 
 
 };

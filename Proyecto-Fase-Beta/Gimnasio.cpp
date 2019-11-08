@@ -8,6 +8,7 @@ Gimnasio::Gimnasio() {
 	listaClase = new ListaClase();
 	listaRegistro = new ListaRegistro();
 	listaSocio = new ListaSocio();
+	
 
 }
 
@@ -82,6 +83,12 @@ Rutina* Gimnasio::buscarRutina(string nombre) {
 RegistroEstadisticas* Gimnasio::buscarRegistro(Fecha* fecha) {
 	return listaRegistro->buscar(fecha);
 }
+int Gimnasio::getCantClase() {
+	return listaClase->getN();
+}
+ListaInstructor* Gimnasio::getListaIns() {
+	return listaInstructor;
+}
 
 Instructor* Gimnasio::buscarInstructor(string instructor) {
 	return listaInstructor->buscarInstructor(instructor);
@@ -121,4 +128,21 @@ int Gimnasio::getTamanioListaSalones() {
 
 int Gimnasio::getCantidadListaIns() {
 	return listaInstructor->getCantidad();
+}
+
+void Gimnasio::eliminarSocio(string ced) {
+
+	listaSocio->eliminarSocio(ced);
+
+}
+
+void Gimnasio::eliminarInstructor(string ced) {
+
+
+	
+
+}
+
+int Gimnasio::getSocios() {
+	return listaSocio->getCant();
 }

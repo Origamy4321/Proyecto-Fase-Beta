@@ -8,6 +8,7 @@
 #include "ListaInstructor.h"
 #include "ListaRutina.h"
 #include "ListaSalon.h"
+#include"coleccionInstruccion.h"
 
 class Gimnasio {
 
@@ -18,6 +19,7 @@ private:
 	ListaInstructor* listaInstructor;
 	ListaRutina* listaRutina;
 	ListaSalon* listaSalon;
+	coleccionInstruccion* colecciones;
 
 public:
 
@@ -73,5 +75,14 @@ public:
 
 	int getCantidadListaIns();
 
+	void eliminarSocio(string);
+
+	void eliminarInstructor(string);
+
+	int getCantClase();
+
+	int getSocios();
+
+	ListaInstructor* getListaIns();
 
 };
