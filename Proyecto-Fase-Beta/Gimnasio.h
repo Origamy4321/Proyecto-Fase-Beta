@@ -2,6 +2,7 @@
 
 #include<iostream>	
 #include<sstream>
+#include "Archivo.h"
 #include "ListaRegistro.h"
 #include "ListaSocio.h"
 #include "ListaClase.h"
@@ -84,5 +85,8 @@ public:
 	int getSocios();
 
 	ListaInstructor* getListaIns();
+
+	
+
 
 };

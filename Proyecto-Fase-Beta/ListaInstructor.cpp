@@ -18,21 +18,8 @@ int ListaInstructor::getCantidad() {
 
 void ListaInstructor::ListaInstructor::agregarInstructor(Instructor* p) {
 
-	NodoInstructor* nuevoNodo;
-
-	if (primero == NULL) {
-		primero = new NodoInstructor(nullptr, p);
-	}
-	else {
-		ultimo = primero;
-
-		while (ultimo->getSiguiente() != NULL) {
-			ultimo = ultimo->getSiguiente();
-		}
-
-		nuevoNodo = new NodoInstructor(NULL, p);
-		ultimo->setSiguiente(nuevoNodo);
-	}
+	primero = new NodoInstructor(primero, p);
+	cantidad++;
 
 }
 

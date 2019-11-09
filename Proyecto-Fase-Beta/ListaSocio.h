@@ -11,7 +11,7 @@ class ListaSocio {
 private:
 
 	NodoSocio* primero;
-	NodoSocio* ultimo; //ULTIMO ES IGUAL A ACTUAL.
+	NodoSocio* ultimo; 
 	int cantidad;
 
 public:

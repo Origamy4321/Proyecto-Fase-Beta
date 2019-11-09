@@ -146,3 +146,4 @@ void Gimnasio::eliminarInstructor(string ced) {
 int Gimnasio::getSocios() {
 	return listaSocio->getCant();
 }
+

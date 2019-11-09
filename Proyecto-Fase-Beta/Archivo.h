@@ -2,6 +2,7 @@
 #include<iostream>
 #include<string>
 #include<sstream>
+#include<fstream>
 using namespace std;
 
 #include"ListaSocio.h"
@@ -10,37 +11,25 @@ using namespace std;
 #include"ListaClase.h"
 
 class Archivo {
+
+
+private:
+
+	ListaSocio* listaS;
+	ListaInstructor* listaI;
+
+
 public:
 
-	virtual void salvarDatosSocio();
+	Archivo();
+
+	virtual void salvarDatosSocio(Socio*);
 	virtual void recuperarDatosSocio();
 
-	virtual void salvarDatosInstructor();
+	virtual void salvarDatosInstructor(Instructor*);
 	virtual void recuperarDatosInstructor();
 
-	virtual void salvarDatosClase();
-	virtual void recuperarDatosClase();
-
-	virtual void salvarDatosSalon();
-	virtual void recuperarDatosSalon();
-
-	//Archivos para Socio(PASARLOS A LA CLASE SOCIO)
-	friend ostream& operator<<(ostream&, const ListaSocio&);
-	friend istream& operator>>(istream&, ListaSocio&);
-
-
-	//Archivos para Instructor(PASARLOS A LA CLASE INSTRUCTOR)
-	friend ostream& operator<<(ostream&, const ListaInstructor&);
-	friend istream& operator>>(istream&, ListaInstructor&);
-
-
-	//Archivos para Clase(PASARLOS A LA CLASE CLASE)
-	friend ostream& operator<<(ostream&, const ListaClase&);
-	friend istream& operator>>(istream&, ListaClase&);
-
-
-	//Archivos para Salon(PASARLOS A LA CLASE SALON)
-	friend ostream& operator<<(ostream&, const ListaSalon&);
-	friend istream& operator>>(istream&, ListaSalon&);
+	
+	
 
 };

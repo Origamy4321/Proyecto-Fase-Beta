@@ -138,7 +138,7 @@ void control::controlAgregarIns() {
 	inter->incluirInstructor();
 }
 void control::controlImprimeIns() {
-	inter->incluirInstructor();
+	inter->imprimeListaInstructor();
 }
 void control::controlEliminaInstruc() {
 	inter->eliminarInstructor();

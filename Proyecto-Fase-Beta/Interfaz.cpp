@@ -41,8 +41,7 @@ void Interfaz::incluirSocio() {
 	if (socio2 == NULL) {
 		if ((dia > 0 && dia < 32) && (mes > 0 && mes < 13)) {
 			fechita = new Fecha(dia, mes, anio);
-			socio1 = new Socio(ced, nombre, correo, telefono, "Pendiente", NULL, NULL);
-
+			socio1 = new Socio(nombre,correo,telefono,ced,"pendiente",NULL,NULL);
 			Gym->agregarSocio(socio1);
 			cout << "El socio con la identificacion " << ced << " ha sido registrado correctamente en el gymnasio" << endl;
 			cout << "Estos son los socios agregados al gymnasio" << endl;
@@ -56,6 +55,7 @@ void Interfaz::incluirSocio() {
 		cout << "La cedula " << ced << " ya se encuentra registrada" << endl;
 		cout << "La persona bajo la cedula " << ced << " es: " << endl;
 		cout << socio2->toString() << endl;
+		
 	}
 
 
